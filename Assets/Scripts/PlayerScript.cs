@@ -6,9 +6,9 @@ public class PlayerScript : MonoBehaviour
     private float _currentSpeed;
 
     public float MinX = -8;
-    public float MinY = -3;
+    public float MinY = 0;
     public float MaxX = -2;
-    public float MaxY = 5;
+    public float MaxY = 8;
 
     // Use this for initialization
     void Start()
@@ -27,5 +27,10 @@ public class PlayerScript : MonoBehaviour
         if (transform.position.x > MaxX) transform.Translate(MaxX - transform.position.x, 0, 0);
         if (transform.position.y < MinY) transform.Translate(0, MinY - transform.position.y, 0);
         if (transform.position.y > MaxY) transform.Translate(0, MaxY - transform.position.y, 0);
+    }
+
+    void OnTriggerEnter2D(Collider2D collisder)
+    {
+        Debug.Log("Damage!!");
     }
 }
