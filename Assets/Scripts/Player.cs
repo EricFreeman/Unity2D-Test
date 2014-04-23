@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Money);
+
         var xSpd = Input.GetAxisRaw("Horizontal");
         var ySpd = Input.GetAxisRaw("Vertical");
 
@@ -29,20 +31,12 @@ public class Player : MonoBehaviour
         if (transform.position.x > MaxX) transform.Translate(MaxX - transform.position.x, 0, 0);
         if (transform.position.y < MinY) transform.Translate(0, MinY - transform.position.y, 0);
         if (transform.position.y > MaxY) transform.Translate(0, MaxY - transform.position.y, 0);
-
+        
         if (Input.GetKeyDown(KeyCode.Space))
-            Fire();
-    }
-
-    void Fire()
-    {
-        var b = (GameObject)Instantiate(Resources.Load("Prefabs/bullet"));
-        b.transform.position = transform.position;
-        var bc = b.GetComponent<Bullet>();
-        bc.Damage = 1;
-        bc.Direction = Vector3.right;
-        bc.Speed = 10f;
-        bc.Source = transform;
+            foreach (var w in GetComponentsInChildren<Weapon>())
+            {
+                w.Fire();   
+            }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
