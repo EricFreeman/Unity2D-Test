@@ -47,6 +47,9 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        // bullets will handle damaging things on their own, this method is just for ramming things.
+        if (collider.tag == "Bullet") return;
+
         GetComponent<Health>().CurrentHealth--;
 
         var h = collider.GetComponent<Health>();
