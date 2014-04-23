@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     public float Damage;
-    public Vector3 Direction;
+    public float Direction;
     public float Speed;
     public Transform Source;
 
@@ -18,7 +19,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        transform.Translate(Direction * Speed * Time.deltaTime);
+        transform.Translate((float)Math.Sin(Direction) * Speed * Time.deltaTime, (float)Math.Cos(Direction) * Speed * Time.deltaTime, 0);
 
         // TODO: find a better way to remove when out of camera sight
         if (transform.position.x < -10 || transform.position.x > 10)

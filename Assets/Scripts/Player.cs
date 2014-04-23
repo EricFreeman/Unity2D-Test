@@ -21,8 +21,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Money);
-
         var xSpd = Input.GetAxisRaw("Horizontal");
         var ySpd = Input.GetAxisRaw("Vertical");
 
