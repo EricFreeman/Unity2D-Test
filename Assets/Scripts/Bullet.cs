@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
         transform.Translate((float)Math.Sin(Direction) * Speed * Time.deltaTime, (float)Math.Cos(Direction) * Speed * Time.deltaTime, 0);
 
-        if(!renderer.isVisible)
+        if (!renderer.isVisible)
             DestroyImmediate(gameObject);
     }
 

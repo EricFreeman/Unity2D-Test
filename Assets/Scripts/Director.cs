@@ -33,6 +33,7 @@ public class Director : MonoBehaviour
                 var ecom = e.GetComponent<Enemy>();
                 ecom.Y = float.Parse(enemy.Attributes["Y"].InnerText);
                 ecom.Spawn = float.Parse(enemy.Attributes["Spawn"].InnerText);
+                ecom.Speed = float.Parse(enemy.Attributes["Speed"].InnerText);
                 ecom.transform.Translate(10, 0, 0);
                 e.gameObject.SetActive(false);
 

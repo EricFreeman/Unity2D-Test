@@ -1,35 +1,35 @@
 <Waves>
 	<Wave BeforeWaveDelay="3">
-		<Enemy Type="Popcorn" Spawn="0" Y="6" />
-		<Enemy Type="Popcorn" Spawn="0" Y="2" />
-		<Enemy Type="Popcorn" Spawn="2" Y="6" />
-		<Enemy Type="Popcorn" Spawn="2" Y="2" />
-		<Enemy Type="Popcorn" Spawn="4" Y="6" />
-		<Enemy Type="Popcorn" Spawn="4" Y="2" />
-		<Enemy Type="Popcorn" Spawn="6" Y="6" />
-		<Enemy Type="Popcorn" Spawn="6" Y="2" />
+		<Enemy Type="Popcorn" Spawn="0" Y="6" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="0" Y="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="2" Y="6" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="2" Y="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="4" Y="6" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="4" Y="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="6" Y="6" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="6" Y="2" Speed="4" />
 		
-		<Enemy Type="Popcorn" Spawn="8" Y="5" />
-		<Enemy Type="Popcorn" Spawn="9" Y="3" />
-		<Enemy Type="Popcorn" Spawn="10" Y="5" />
-		<Enemy Type="Popcorn" Spawn="11" Y="3" />
-		<Enemy Type="Popcorn" Spawn="12" Y="5" />
-		<Enemy Type="Popcorn" Spawn="13" Y="3" />
-		<Enemy Type="Popcorn" Spawn="14" Y="5" />
-		<Enemy Type="Popcorn" Spawn="15" Y="3" />
+		<Enemy Type="Popcorn" Spawn="8" Y="5" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="9" Y="3" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="10" Y="5" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="11" Y="3" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="12" Y="5" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="13" Y="3" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="14" Y="5" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="15" Y="3" Speed="5" />
 		
-		<Enemy Type="Popcorn" Spawn="16" Y="4" />
-		<Enemy Type="Popcorn" Spawn="16" Y="7" />
-		<Enemy Type="Popcorn" Spawn="16.5" Y="2" />
-		<Enemy Type="Popcorn" Spawn="17" Y="6" />
-		<Enemy Type="Popcorn" Spawn="17" Y="4" />
-		<Enemy Type="Popcorn" Spawn="17.5" Y="1" />
-		<Enemy Type="Popcorn" Spawn="18" Y="7" />
-		<Enemy Type="Popcorn" Spawn="18" Y="2" />
-		<Enemy Type="Popcorn" Spawn="18.5" Y="4" />
-		<Enemy Type="Popcorn" Spawn="18.5" Y="6" />
-		<Enemy Type="Popcorn" Spawn="119" Y="1" />
-		<Enemy Type="Popcorn" Spawn="19.5" Y="3" />
-		<Enemy Type="Popcorn" Spawn="19.5" Y="5" />
+		<Enemy Type="Popcorn" Spawn="16" Y="4" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="16" Y="7" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="16.5" Y="2" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="17" Y="6" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="17" Y="4" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="17.5" Y="1" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="18" Y="7" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="18" Y="2" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="18.5" Y="4" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="18.5" Y="6" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="119" Y="1" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="19.5" Y="3" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="19.5" Y="5" Speed="8" />
 	</Wave>
 </Waves>
