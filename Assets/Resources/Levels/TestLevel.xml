@@ -12,8 +12,14 @@
 	<Wave BeforeWaveDelay="3">
 		<Enemy Type="ZigZag" Spawn="0" Y="2" Speed="4" />
 		<Enemy Type="ZigZag" Spawn="0" Y="6" Speed="4" />
+		<Enemy Type="DiveBomber" Spawn="1" Y="2" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="2" Y="3" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="3" Y="4" Speed="7" />
 		<Enemy Type="ZigZag" Spawn="4" Y="1" Speed="4" />
 		<Enemy Type="ZigZag" Spawn="4" Y="5" Speed="4" />
+		<Enemy Type="DiveBomber" Spawn="5" Y="5" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="6" Y="6" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="7" Y="7" Speed="7" />
 		<Enemy Type="ZigZag" Spawn="8" Y="2" Speed="4" />
 		<Enemy Type="ZigZag" Spawn="8" Y="6" Speed="4" />
 	</Wave>
