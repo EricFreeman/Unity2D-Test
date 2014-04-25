@@ -29,7 +29,7 @@ public class Director : MonoBehaviour
             foreach (XmlNode enemy in wave.SelectNodes("Enemy"))
             {
                 var e = (GameObject)Instantiate(
-                    Resources.Load("Prefabs/" + enemy.Attributes["Type"].InnerText));
+                    Resources.Load("Prefabs/Enemies/" + enemy.Attributes["Type"].InnerText));
                 var ecom = e.GetComponent<Enemy>();
                 ecom.Y = float.Parse(enemy.Attributes["Y"].InnerText);
                 ecom.Spawn = float.Parse(enemy.Attributes["Spawn"].InnerText);

@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400006}
   m_Layer: 8
   m_Name: Popcorn
   m_TagString: Enemy
@@ -69,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abc8620748cec841bf4ba485790046b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
   Spawn: 0
 --- !u!114 &11400002
 MonoBehaviour:
@@ -96,6 +96,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 5
   CurrentHealth: 5
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d429b931f87aa43867ca11d21d2529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
