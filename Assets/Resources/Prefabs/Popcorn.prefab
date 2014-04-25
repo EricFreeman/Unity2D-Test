@@ -14,9 +14,9 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
-  m_Layer: 0
-  m_Name: enemy
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: Popcorn
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+  Spawn: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

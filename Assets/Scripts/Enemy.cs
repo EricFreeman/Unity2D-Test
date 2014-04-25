@@ -3,14 +3,15 @@
 public class Enemy : MonoBehaviour
 {
     public float Speed = 5f;
+    public float Spawn;
+    public float Y
+    {
+        get { return transform.position.y; }
+        set { transform.Translate(0, transform.position.y * -1 + value, 0); }
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    transform.Translate(Vector3.left * Speed * Time.deltaTime);
-	}
+    void Update()
+    {
+        transform.Translate(Vector3.left * Speed * Time.deltaTime);
+    }
 }
