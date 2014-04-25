@@ -21,10 +21,7 @@ public class Bullet : MonoBehaviour
 
         transform.Translate((float)Math.Sin(Direction) * Speed * Time.deltaTime, (float)Math.Cos(Direction) * Speed * Time.deltaTime, 0);
 
-        // TODO: find a better way to remove when out of camera sight
-        if (transform.position.x < -10 || transform.position.x > 10)
-            DestroyImmediate(gameObject);
-        else if (transform.position.y < -1 || transform.position.y > 10)
+        if(!renderer.isVisible)
             DestroyImmediate(gameObject);
     }
 
