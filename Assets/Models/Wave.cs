@@ -5,7 +5,7 @@ namespace Assets.Models
 {
     public class Wave
     {
-        public List<GameObject> EnemyList { get; set; }
+        public List<GameObject> EnemiesToSpawn { get; set; }
         public float BeforeWaveDelay { get; set; }
     }
 }

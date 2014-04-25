@@ -23,7 +23,7 @@ public class Director : MonoBehaviour
             {
                 BeforeWaveDelay =
                     float.Parse(wave.Attributes["BeforeWaveDelay"].InnerText),
-                EnemyList = new List<GameObject>()
+                EnemiesToSpawn = new List<GameObject>()
             };
 
             foreach (XmlNode enemy in wave.SelectNodes("Enemy"))
@@ -37,7 +37,7 @@ public class Director : MonoBehaviour
                 ecom.transform.Translate(10, 0, 0);
                 e.gameObject.SetActive(false);
 
-                w.EnemyList.Add(e);
+                w.EnemiesToSpawn.Add(e);
             }
 
             _waves.Add(w);
@@ -49,24 +49,26 @@ public class Director : MonoBehaviour
     {
         _waveDelay -= Time.deltaTime;
 
+        // If there is a new wave to spawn AND the delay before next wave is up
         var currentWave = _waves.FirstOrDefault();
         if (currentWave != null && _waveDelay < 0)
         {
             _waveTime += Time.deltaTime;
             
             // Spawn the next enemies in the wave once it's time
-            var toEnable = currentWave.EnemyList
+            var toEnable = currentWave.EnemiesToSpawn
                 .Where(x => x.GetComponent<Enemy>().Spawn < _waveTime)
                 .ToList();
 
             foreach (var e in toEnable)
             {
                 e.SetActive(true);
-                currentWave.EnemyList.Remove(e);
+                currentWave.EnemiesToSpawn.Remove(e);
             }
 
             // If all enemies in wave are dead, pop it off and reset delay
-            if (currentWave.EnemyList.Count == 0)
+            if (currentWave.EnemiesToSpawn.Count == 0 && 
+                !GameObject.FindGameObjectsWithTag("Enemy").Any())
             {
                 _waveTime = 0;
                 _waves.RemoveAt(0);
