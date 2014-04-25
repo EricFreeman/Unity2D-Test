@@ -19,12 +19,17 @@
 		<Enemy Type="Popcorn" Spawn="15" Y="3" />
 		
 		<Enemy Type="Popcorn" Spawn="16" Y="4" />
-		<Enemy Type="Popcorn" Spawn="16.25" Y="2" />
-		<Enemy Type="Popcorn" Spawn="16.5" Y="5" />
-		<Enemy Type="Popcorn" Spawn="16.75" Y="6" />
+		<Enemy Type="Popcorn" Spawn="16" Y="7" />
+		<Enemy Type="Popcorn" Spawn="16.5" Y="2" />
+		<Enemy Type="Popcorn" Spawn="17" Y="6" />
 		<Enemy Type="Popcorn" Spawn="17" Y="4" />
-		<Enemy Type="Popcorn" Spawn="17.25" Y="2" />
-		<Enemy Type="Popcorn" Spawn="17.5" Y="5" />
-		<Enemy Type="Popcorn" Spawn="17.75" Y="6" />
+		<Enemy Type="Popcorn" Spawn="17.5" Y="1" />
+		<Enemy Type="Popcorn" Spawn="18" Y="7" />
+		<Enemy Type="Popcorn" Spawn="18" Y="2" />
+		<Enemy Type="Popcorn" Spawn="18.5" Y="4" />
+		<Enemy Type="Popcorn" Spawn="18.5" Y="6" />
+		<Enemy Type="Popcorn" Spawn="119" Y="1" />
+		<Enemy Type="Popcorn" Spawn="19.5" Y="3" />
+		<Enemy Type="Popcorn" Spawn="19.5" Y="5" />
 	</Wave>
 </Waves>
