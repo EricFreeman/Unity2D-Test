@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb79f988952e8394c9a6c39c1ba5be96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxDelay: 20
 --- !u!212 &112665255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &124759309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb79f988952e8394c9a6c39c1ba5be96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxDelay: 20
 --- !u!212 &124759310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -269,6 +271,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
+      propertyPath: MaxDelay
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
   m_RootGameObject: {fileID: 1605728976}
@@ -311,7 +317,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
+      propertyPath: MaxDelay
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
@@ -356,6 +366,10 @@ Prefab:
     - target: {fileID: 100000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
+      propertyPath: MaxDelay
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
@@ -588,6 +602,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
+      propertyPath: MaxDelay
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83be354dd1a54064983351a81445f3d5, type: 2}
   m_RootGameObject: {fileID: 112665252}
@@ -648,6 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb79f988952e8394c9a6c39c1ba5be96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxDelay: 20
 --- !u!212 &1605728978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -751,6 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb79f988952e8394c9a6c39c1ba5be96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxDelay: 20
 --- !u!212 &1640936852
 SpriteRenderer:
   m_ObjectHideFlags: 0

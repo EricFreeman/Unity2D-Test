@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         if (transform.position.y < MinY) transform.Translate(0, MinY - transform.position.y, 0);
         if (transform.position.y > MaxY) transform.Translate(0, MaxY - transform.position.y, 0);
          
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
             foreach (var w in GetComponentsInChildren<Weapon>())
             {
                 w.Fire();   
