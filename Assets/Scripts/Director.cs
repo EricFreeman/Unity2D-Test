@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using Assets.Models;
@@ -8,7 +7,8 @@ using UnityEngine;
 public class Director : MonoBehaviour
 {
     private float _waveTime;
-    private List<Wave> _waves = new List<Wave>(); 
+    private float _waveDelay;
+    private List<Wave> _waves = new List<Wave>();
 
     // Use this for initialization
     void Start()
@@ -47,16 +47,36 @@ public class Director : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _waveTime += Time.deltaTime;
+        _waveDelay -= Time.deltaTime;
 
-        var toEnable = _waves[0].EnemyList
-            .Where(x => x.GetComponent<Enemy>().Spawn < _waveTime)
-            .ToList();
-
-        foreach (var e in toEnable)
+        var currentWave = _waves.FirstOrDefault();
+        if (currentWave != null && _waveDelay < 0)
         {
-            e.SetActive(true);
-            _waves[0].EnemyList.Remove(e);
+            _waveTime += Time.deltaTime;
+            
+            // Spawn the next enemies in the wave once it's time
+            var toEnable = currentWave.EnemyList
+                .Where(x => x.GetComponent<Enemy>().Spawn < _waveTime)
+                .ToList();
+
+            foreach (var e in toEnable)
+            {
+                e.SetActive(true);
+                currentWave.EnemyList.Remove(e);
+            }
+
+            // If all enemies in wave are dead, pop it off and reset delay
+            if (currentWave.EnemyList.Count == 0)
+            {
+                _waveTime = 0;
+                _waves.RemoveAt(0);
+                var newWave = _waves.FirstOrDefault();
+
+                if (newWave != null)
+                {
+                    _waveDelay = newWave.BeforeWaveDelay;
+                }
+            }
         }
     }
 }

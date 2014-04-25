@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Move Player
         var xSpd = Input.GetAxisRaw("Horizontal");
         var ySpd = Input.GetAxisRaw("Vertical");
 
@@ -29,21 +30,22 @@ public class Player : MonoBehaviour
         if (transform.position.x > MaxX) transform.Translate(MaxX - transform.position.x, 0, 0);
         if (transform.position.y < MinY) transform.Translate(0, MinY - transform.position.y, 0);
         if (transform.position.y > MaxY) transform.Translate(0, MaxY - transform.position.y, 0);
-         
+
+        // Fire all weapons attached to the player
         if (Input.GetKey(KeyCode.Space))
             foreach (var w in GetComponentsInChildren<Weapon>())
-            {
-                w.Fire();   
-            }
+                w.Fire();
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerStay2D(Collider2D collider)
     {
-        // bullets will handle damaging things on their own, this method is just for ramming things.
+        // Bullets will handle damaging things on their own, this method is just for ramming things.
         if (collider.tag == "Bullet") return;
 
+        // Decrease health of player
         GetComponent<Health>().CurrentHealth--;
 
+        // Descrease health of whatever you collided with
         var h = collider.GetComponent<Health>();
         if (h != null) h.CurrentHealth--;
     }

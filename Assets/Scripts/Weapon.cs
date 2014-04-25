@@ -17,11 +17,11 @@ public class Weapon : MonoBehaviour
     {
         if (currentDelay < 0)
         {
-            var b = (GameObject) Instantiate(Resources.Load("Prefabs/bullet"));
+            var b = (GameObject)Instantiate(Resources.Load("Prefabs/bullet"));
             b.transform.position = transform.GetChild(0).position;
             var bc = b.GetComponent<Bullet>();
             bc.Damage = Damage;
-            bc.Direction = -1*transform.rotation.z + (float) Math.PI/2;
+            bc.Direction = -1 * transform.rotation.z + (float)Math.PI / 2;
             bc.Speed = 10f;
             bc.Source = transform.parent.transform;
 
