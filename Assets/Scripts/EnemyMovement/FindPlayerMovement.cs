@@ -9,12 +9,15 @@ namespace Assets.Scripts.EnemyMovement
         void Update()
         {
             var p = GameObject.FindGameObjectWithTag("Player");
+            Debug.Log(transform.position);
+            Debug.Log(p.transform.position);
+            Debug.Log(Speed * Time.deltaTime);
             if (p != null)
-               transform.Translate(
+               transform.position =
                    Vector3.MoveTowards(
                         transform.position,
                         p.transform.position, 
-                        Speed)); 
+                        Speed * Time.deltaTime); 
             else
                 transform.Translate(Vector3.left * Speed * Time.deltaTime);
         }
