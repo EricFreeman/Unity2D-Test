@@ -31,10 +31,10 @@ public class Director : MonoBehaviour
                 var e = (GameObject)Instantiate(
                     Resources.Load("Prefabs/Enemies/" + enemy.Attributes["Type"].InnerText));
                 var ecom = e.GetComponent<Enemy>();
-                ecom.Y = float.Parse(enemy.Attributes["Y"].InnerText);
+                ecom.X = float.Parse(enemy.Attributes["X"].InnerText);
                 ecom.Spawn = float.Parse(enemy.Attributes["Spawn"].InnerText);
                 ecom.Speed = float.Parse(enemy.Attributes["Speed"].InnerText);
-                ecom.transform.Translate(10, 0, 0);
+                ecom.transform.Translate(0, 17, 0);
                 e.gameObject.SetActive(false);
 
                 w.EnemiesToSpawn.Add(e);

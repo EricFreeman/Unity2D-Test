@@ -18,16 +18,16 @@ public class Enemy : MonoBehaviour
     public float Spawn;
     private float _speed;
 
-    public float Y
+    public float X
     {
-        get { return transform.position.y; }
-        set { transform.Translate(0, transform.position.y * -1 + value, 0); }
+        get { return transform.position.x; }
+        set { transform.Translate(transform.position.x * -1 + value, 0, 0); }
     }
 
     void Update()
     {
         // TODO: Probably should do this better..?
-        if(transform.position.x < -10)
+        if(transform.position.y < -2)
             DestroyImmediate(gameObject);
     }
 }

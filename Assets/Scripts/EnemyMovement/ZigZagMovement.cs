@@ -8,8 +8,8 @@ namespace Assets.Scripts.EnemyMovement
 
         void Update()
         {
-            transform.Translate(Vector3.left * Speed * Time.deltaTime
-                + new Vector3(0, .25f * Mathf.Sin(10 * Time.time), 0));
+            transform.Translate(Vector3.down * Speed * Time.deltaTime
+                + new Vector3(.25f * Mathf.Sin(10 * Time.time), 0, 0));
         }
     }
 }

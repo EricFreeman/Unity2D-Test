@@ -9,9 +9,6 @@ namespace Assets.Scripts.EnemyMovement
         void Update()
         {
             var p = GameObject.FindGameObjectWithTag("Player");
-            Debug.Log(transform.position);
-            Debug.Log(p.transform.position);
-            Debug.Log(Speed * Time.deltaTime);
             if (p != null)
                transform.position =
                    Vector3.MoveTowards(
@@ -19,7 +16,7 @@ namespace Assets.Scripts.EnemyMovement
                         p.transform.position, 
                         Speed * Time.deltaTime); 
             else
-                transform.Translate(Vector3.left * Speed * Time.deltaTime);
+                transform.Translate(Vector3.down * Speed * Time.deltaTime);
         }
     }
 }

@@ -1,51 +1,51 @@
 <Waves>
 	<Wave BeforeWaveDelay="3">
-		<Enemy Type="Popcorn" Spawn="0" Y="6" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="0" Y="2" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="2" Y="6" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="2" Y="2" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="4" Y="6" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="4" Y="2" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="6" Y="6" Speed="4" />
-		<Enemy Type="Popcorn" Spawn="6" Y="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="0" X="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="0" X="-2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="2" X="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="2" X="-2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="4" X="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="4" X="-2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="6" X="2" Speed="4" />
+		<Enemy Type="Popcorn" Spawn="6" X="-2" Speed="4" />
 	</Wave>
 	<Wave BeforeWaveDelay="3">
-		<Enemy Type="ZigZag" Spawn="0" Y="2" Speed="4" />
-		<Enemy Type="ZigZag" Spawn="0" Y="6" Speed="4" />
-		<Enemy Type="DiveBomber" Spawn="1" Y="2" Speed="7" />
-		<Enemy Type="DiveBomber" Spawn="2" Y="3" Speed="7" />
-		<Enemy Type="DiveBomber" Spawn="3" Y="4" Speed="7" />
-		<Enemy Type="ZigZag" Spawn="4" Y="1" Speed="4" />
-		<Enemy Type="ZigZag" Spawn="4" Y="5" Speed="4" />
-		<Enemy Type="DiveBomber" Spawn="5" Y="5" Speed="7" />
-		<Enemy Type="DiveBomber" Spawn="6" Y="6" Speed="7" />
-		<Enemy Type="DiveBomber" Spawn="7" Y="7" Speed="7" />
-		<Enemy Type="ZigZag" Spawn="8" Y="2" Speed="4" />
-		<Enemy Type="ZigZag" Spawn="8" Y="6" Speed="4" />
+		<Enemy Type="ZigZag" Spawn="0" X="-1" Speed="4" />
+		<Enemy Type="ZigZag" Spawn="0" X="1" Speed="4" />
+		<Enemy Type="DiveBomber" Spawn="1" X="-2" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="2" X="-1" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="3" X="0" Speed="7" />
+		<Enemy Type="ZigZag" Spawn="4" X="-1" Speed="4" />
+		<Enemy Type="ZigZag" Spawn="4" X="1" Speed="4" />
+		<Enemy Type="DiveBomber" Spawn="5" X="1" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="6" X="2" Speed="7" />
+		<Enemy Type="DiveBomber" Spawn="7" X="3" Speed="7" />
+		<Enemy Type="ZigZag" Spawn="8" X="-1" Speed="4" />
+		<Enemy Type="ZigZag" Spawn="8" X="1" Speed="4" />
 	</Wave>
 	<Wave BeforeWaveDelay="3">
-		<Enemy Type="Popcorn" Spawn="0" Y="5" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="1" Y="3" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="2" Y="5" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="3" Y="3" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="4" Y="5" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="5" Y="3" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="6" Y="5" Speed="5" />
-		<Enemy Type="Popcorn" Spawn="7" Y="3" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="0" X="1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="1" X="-1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="2" X="1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="3" X="-1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="4" X="1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="5" X="-1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="6" X="1" Speed="5" />
+		<Enemy Type="Popcorn" Spawn="7" X="-1" Speed="5" />
 	</Wave>
 	<Wave BeforeWaveDelay="3">
-		<Enemy Type="Popcorn" Spawn="0" Y="4" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="0" Y="7" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="0.5" Y="2" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="1" Y="6" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="1" Y="4" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="1.5" Y="1" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="2" Y="7" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="2" Y="2" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="2.5" Y="4" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="2.5" Y="6" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="3" Y="1" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="3.5" Y="3" Speed="8" />
-		<Enemy Type="Popcorn" Spawn="3.5" Y="5" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="0" X="0" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="0" X="3" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="0.5" X="-2" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="1" X="2" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="1" X="0" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="1.5" X="-3" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="2" X="3" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="2" X="-2" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="2.5" X="0" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="2.5" X="2" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="3" X="-3" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="3.5" X="-1" Speed="8" />
+		<Enemy Type="Popcorn" Spawn="3.5" X="1" Speed="8" />
 	</Wave>
 </Waves>
