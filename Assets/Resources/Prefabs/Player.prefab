@@ -294,10 +294,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 5
-  MinX: -8
-  MinY: 0
-  MaxX: 8
-  MaxY: 8
+  MinX: -4
+  MinY: .5
+  MaxX: 4
+  MaxY: 15
   Money: 0
 --- !u!114 &11400002
 MonoBehaviour:
