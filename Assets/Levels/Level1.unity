@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 650108038}
   - 131: {fileID: 650108037}
+  - 114: {fileID: 650108039}
   m_Layer: 0
   m_Name: HealthGui
   m_TagString: Untagged
@@ -121,6 +122,17 @@ Transform:
   m_Children:
   - {fileID: 1531365827}
   m_Father: {fileID: 1388751908}
+--- !u!114 &650108039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650108036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb78a9a7e11c0f4e9912ef7eadeed5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667298505
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +625,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531365825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -.100000001}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 650108038}

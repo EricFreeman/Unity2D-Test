@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
+using Assets.Extensions;
 using Assets.Models;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class Director : MonoBehaviour
 {
     private float _waveTime;
     private float _waveDelay;
-    private List<Wave> _waves = new List<Wave>();
+    private readonly List<Wave> _waves = new List<Wave>();
     private float _money;
 
     public float Money
@@ -21,30 +22,33 @@ public class Director : MonoBehaviour
         }
     }
 
-    // Use this for initialization
     void Start()
     {
+        LoadLevel("TestLevel");
+    }
+
+    private void LoadLevel(string levelName)
+    {
         var doc = new XmlDocument();
-        doc.Load("Assets/Resources/Levels/TestLevel.xml");
-        XmlNode waves = doc.SelectSingleNode("Waves");
+        doc.Load("Assets/Resources/Levels/{0}.xml".ToFormat(levelName));
+        var waves = doc.SelectSingleNode("Waves");
 
         foreach (XmlNode wave in waves.SelectNodes("Wave"))
         {
             var w = new Wave
             {
-                BeforeWaveDelay =
-                    float.Parse(wave.Attributes["BeforeWaveDelay"].InnerText),
+                BeforeWaveDelay = float.Parse(wave.GetAttributeOrDefault("BeforeWaveDelay", "0")),
                 EnemiesToSpawn = new List<GameObject>()
             };
 
             foreach (XmlNode enemy in wave.SelectNodes("Enemy"))
             {
-                var e = (GameObject)Instantiate(
-                    Resources.Load("Prefabs/Enemies/" + enemy.Attributes["Type"].InnerText));
+                var e = (GameObject) Instantiate(
+                    Resources.Load("Prefabs/Enemies/" + enemy.GetAttributeOrDefault("Type", "Popcorn")));
                 var ecom = e.GetComponent<Enemy>();
-                ecom.X = float.Parse(enemy.Attributes["X"].InnerText);
-                ecom.Spawn = float.Parse(enemy.Attributes["Spawn"].InnerText);
-                ecom.Speed = float.Parse(enemy.Attributes["Speed"].InnerText);
+                ecom.X = float.Parse(enemy.GetAttributeOrDefault("X", "0"));
+                ecom.Spawn = float.Parse(enemy.GetAttributeOrDefault("Spawn", "0"));
+                ecom.Speed = float.Parse(enemy.GetAttributeOrDefault("Speed", "5"));
                 ecom.transform.Translate(0, 17, 0);
                 e.gameObject.SetActive(false);
 
@@ -71,6 +75,7 @@ public class Director : MonoBehaviour
                 .Where(x => x.GetComponent<Enemy>().Spawn < _waveTime)
                 .ToList();
 
+            // Enable correct enemies
             foreach (var e in toEnable)
             {
                 e.SetActive(true);
@@ -92,6 +97,7 @@ public class Director : MonoBehaviour
             }
         }
 
+        // Update player's money in GUI
         var p = GameObject.FindGameObjectWithTag("Player");
         if (p != null)
         {
