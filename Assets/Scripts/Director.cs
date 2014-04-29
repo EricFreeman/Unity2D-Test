@@ -9,6 +9,17 @@ public class Director : MonoBehaviour
     private float _waveTime;
     private float _waveDelay;
     private List<Wave> _waves = new List<Wave>();
+    private float _money;
+
+    public float Money
+    {
+        get { return _money; }
+        set
+        {
+            _money = value;
+            GameObject.Find("MoneyText").guiText.text = "Money: $" + _money;
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -79,6 +90,12 @@ public class Director : MonoBehaviour
                     _waveDelay = newWave.BeforeWaveDelay;
                 }
             }
+        }
+
+        var p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+        {
+            Money = p.GetComponent<Player>().Money;
         }
     }
 }
