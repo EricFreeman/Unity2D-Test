@@ -12,6 +12,9 @@ public class Director : MonoBehaviour
     private readonly List<Wave> _waves = new List<Wave>();
     private float _money;
 
+    private bool _isPlayerDead;
+    private bool _isLevelOver;
+
     public float Money
     {
         get { return _money; }
@@ -59,49 +62,84 @@ public class Director : MonoBehaviour
         }
     }
 
+    void OnGUI()
+    {
+        if (_isPlayerDead || _isLevelOver)
+        {
+            var width = 200;
+            var height = 200;
+            var currentY = 0;
+            var lineHeight = 30;
+
+            var x = (Screen.width - width) / 2;
+            var y = (Screen.height - height) / 2;
+
+            GUI.BeginGroup(new Rect(x, y, width, height));
+
+            GUI.Label(new Rect(0, currentY, width, lineHeight), "Level Loot: $" + _money);
+            currentY += lineHeight;
+
+            if (_isPlayerDead)
+            {
+                GUI.Label(new Rect(0, currentY, width, lineHeight), "Death Penalty (25%): -$" + _money * .25);
+                currentY += lineHeight;
+                GUI.Label(new Rect(0, currentY, width, lineHeight), "Total Level Loot: $" + _money * .75);
+                currentY += lineHeight;
+            }
+
+            if (GUI.Button(new Rect(0, currentY, width, lineHeight), "Continue"))
+                Application.LoadLevel("UpgradeScreen");
+
+            GUI.EndGroup();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        _waveDelay -= Time.deltaTime;
-
-        // If there is a new wave to spawn AND the delay before next wave is up
-        var currentWave = _waves.FirstOrDefault();
-        if (currentWave != null && _waveDelay < 0)
-        {
-            _waveTime += Time.deltaTime;
-            
-            // Spawn the next enemies in the wave once it's time
-            var toEnable = currentWave.EnemiesToSpawn
-                .Where(x => x.GetComponent<Enemy>().Spawn < _waveTime)
-                .ToList();
-
-            // Enable correct enemies
-            foreach (var e in toEnable)
-            {
-                e.SetActive(true);
-                currentWave.EnemiesToSpawn.Remove(e);
-            }
-
-            // If all enemies in wave are dead, pop it off and reset delay
-            if (currentWave.EnemiesToSpawn.Count == 0 && 
-                !GameObject.FindGameObjectsWithTag("Enemy").Any())
-            {
-                _waveTime = 0;
-                _waves.RemoveAt(0);
-                var newWave = _waves.FirstOrDefault();
-
-                if (newWave != null)
-                {
-                    _waveDelay = newWave.BeforeWaveDelay;
-                }
-            }
-        }
-
-        // Update player's money in GUI
         var p = GameObject.FindGameObjectWithTag("Player");
         if (p != null)
         {
             Money = p.GetComponent<Player>().Money;
+
+            _waveDelay -= Time.deltaTime;
+
+            // If there is a new wave to spawn AND the delay before next wave is up
+            var currentWave = _waves.FirstOrDefault();
+            if (currentWave != null && _waveDelay < 0)
+            {
+                _waveTime += Time.deltaTime;
+
+                // Spawn the next enemies in the wave once it's time
+                var toEnable = currentWave.EnemiesToSpawn
+                    .Where(x => x.GetComponent<Enemy>().Spawn < _waveTime)
+                    .ToList();
+
+                // Enable correct enemies
+                foreach (var e in toEnable)
+                {
+                    e.SetActive(true);
+                    currentWave.EnemiesToSpawn.Remove(e);
+                }
+
+                // If all enemies in wave are dead, pop it off and reset delay
+                if (currentWave.EnemiesToSpawn.Count == 0 &&
+                    !GameObject.FindGameObjectsWithTag("Enemy").Any())
+                {
+                    _waveTime = 0;
+                    _waves.RemoveAt(0);
+                    var newWave = _waves.FirstOrDefault();
+
+                    if (newWave != null)
+                        _waveDelay = newWave.BeforeWaveDelay;
+                    else
+                        _isLevelOver = true;
+                }
+            }
+        }
+        else
+        {
+            _isPlayerDead = true;
         }
     }
 }
