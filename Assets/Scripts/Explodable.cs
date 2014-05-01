@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-public class Explodable : MonoBehaviour
+namespace Assets.Scripts
 {
-    /// <summary>
-    /// How much money the player gets when this object explodes
-    /// </summary>
-    public float Money;
-
-    public void Explode()
+    public class Explodable : MonoBehaviour
     {
-        var p = FindObjectOfType<Player>();
-        if(p != null) p.Money += Money;
+        /// <summary>
+        /// How much money the player gets when this object explodes
+        /// </summary>
+        public float Money;
 
-        Destroy(gameObject);
+        public void Explode()
+        {
+            var p = FindObjectOfType<Player>();
+            if (p != null) p.Money += Money;
 
-        //Maybe spawn some debris of a type that's passed in here?
+            Destroy(gameObject);
+
+            //Maybe spawn some debris of a type that's passed in here?
+        }
     }
 }

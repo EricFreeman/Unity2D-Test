@@ -1,26 +1,32 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Extensions;
+using Assets.Models;
 using Assets.Scripts.Upgrades;
 using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    private float _money = 300;
     private StoreCategory _selectedCategory = StoreCategory.Weapon;
-    private List<StoreItem> _storeItems = new List<StoreItem>();
+    private List<Item> _storeItems = new List<Item>();
+    private Player _currentPlayer { get; set; }
 
     private Vector2 _scrollPosition = Vector2.zero;
 
     void Start()
     {
-        _storeItems.Add(new StoreItem("Gun1", "Starter gun", 5, StoreCategory.Weapon));
-        _storeItems.Add(new StoreItem("Gun2", "Okay gun", 25, StoreCategory.Weapon));
-        _storeItems.Add(new StoreItem("Gun3", "Best gun", 250, StoreCategory.Weapon));
+        _storeItems.Add(new Item("Gun1", "Starter gun", 5, StoreCategory.Weapon));
+        _storeItems.Add(new Item("Gun2", "Okay gun", 25, StoreCategory.Weapon));
+        _storeItems.Add(new Item("Gun3", "Best gun", 250, StoreCategory.Weapon));
 
-        _storeItems.Add(new StoreItem("Armor1", "Starter armor", 5, StoreCategory.ShipUpgrade));
-        _storeItems.Add(new StoreItem("Armor2", "Okay armor", 25, StoreCategory.ShipUpgrade));
-        _storeItems.Add(new StoreItem("Armor3", "Best armor", 250, StoreCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Armor1", "Starter armor", 5, StoreCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Armor2", "Okay armor", 25, StoreCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Armor3", "Best armor", 250, StoreCategory.ShipUpgrade));
+
+        _currentPlayer = new Player
+        {
+            Money = 300
+        };
     }
 
     void OnGUI()
@@ -49,9 +55,9 @@ public class UpgradeMenu : MonoBehaviour
         {
             if (GUI.Button(new Rect(10, currentY, 100, 30), "{0} - {1}".ToFormat(storeItem.Name, storeItem.Price)))
             {
-                if (_money > storeItem.Price)
+                if (_currentPlayer.Money > storeItem.Price)
                 {
-                    _money -= storeItem.Price;
+                    _currentPlayer.Money -= storeItem.Price;
                 }
             }
 
