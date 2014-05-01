@@ -3,35 +3,31 @@
 public class UpgradeMenu : MonoBehaviour
 {
     private float _money = 0;
-    // Use this for initialization
-    void Start()
-    {
-        //TODO: load money from player preferences
-    }
+
+    private Vector2 _scrollPosition = Vector2.zero;
 
     void OnGUI()
     {
-        var groupWidth = 120;
-        var groupHeight = 150;
+        var guiWidth = Screen.width;
+        var guiHeight = 300;
 
-        var screenWidth = Screen.width;
-        var screenHeight = Screen.height;
 
-        var groupX = (screenWidth - groupWidth) / 2;
-        var groupY = (screenHeight - groupHeight) / 2;
+        GUI.Box(new Rect(0, 0, guiWidth, guiHeight), "Buy");
+        _scrollPosition = GUI.BeginScrollView(new Rect(0, 20, guiWidth, guiHeight -20), _scrollPosition, new Rect(0, 0, guiWidth - 20, guiHeight + 70));
 
-        GUI.BeginGroup(new Rect(groupX, groupY, groupWidth, groupHeight));
-        GUI.Box(new Rect(0, 0, groupWidth, groupHeight), "Upgrades");
-
-        if (GUI.Button(new Rect(10, 30, 100, 30), "Guns++"))
+        if (GUI.Button(new Rect(10, 30, 100, 30), "Gun1"))
         {
             //check if you have enough money, then add damage to player ship or something?
         }
-        if (GUI.Button(new Rect(10, 30, 100, 30), "Damage++"))
+        if (GUI.Button(new Rect(10, 60, 100, 30), "Gun2"))
         {
             //check if you have enough money, then add damage to player bullets?
         }
+        if (GUI.Button(new Rect(10, 90, 100, 30), "Gun3")) { }
+        if (GUI.Button(new Rect(10, 120, 100, 30), "Gun4")) { }
+        if (GUI.Button(new Rect(10, 150, 100, 30), "Gun5")) { }
+        if (GUI.Button(new Rect(10, 180, 100, 30), "Gun6")) { }
 
-        GUI.EndGroup();
+        GUI.EndScrollView();
     }
 }
