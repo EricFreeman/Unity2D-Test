@@ -5,9 +5,9 @@
         public string Name { get; set; }
         public string Description { get; set; }
         public float Price { get; set; }
-        public StoreCategory Category { get; set; }
+        public ItemCategory Category { get; set; }
 
-        public Item(string name, string description, float price, StoreCategory category)
+        public Item(string name, string description, float price, ItemCategory category)
         {
             Name = name;
             Description = description;
