@@ -17,6 +17,11 @@ public class SelectedItem : MonoBehaviour
         set { SetLabel("Item Price", value); }
     }
 
+    void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void SelectItem(StoreItem item)
     {
         Name = item.ItemName;

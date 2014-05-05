@@ -12,6 +12,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public GameObject UIParent;
     public GameObject ButtonPrefab;
+    public GameObject SelectedPanel;
 
     void Start()
     {
@@ -86,6 +87,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void Select(StoreItem item)
     {
-        GameObject.Find("SelectedPanel").GetComponent<SelectedItem>().SelectItem(item);
+        SelectedPanel.SetActive(true);
+        SelectedPanel.GetComponent<SelectedItem>().SelectItem(item);
     }
 }
