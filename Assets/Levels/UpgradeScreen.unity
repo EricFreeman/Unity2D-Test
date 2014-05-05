@@ -1683,6 +1683,7 @@ GameObject:
   - 114: {fileID: 1250523768}
   - 114: {fileID: 1250523767}
   - 114: {fileID: 1250523766}
+  - 114: {fileID: 1250523771}
   m_Layer: 0
   m_Name: BuyButton
   m_TagString: Untagged
@@ -1776,6 +1777,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 85, y: 30, z: 0}
   m_Center: {x: 0, y: 0, z: -1.25}
+--- !u!114 &1250523771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250523764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20406db589f93c3408c1d3498b668427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeMenu: {fileID: 368701921}
+  StoreItem: {fileID: 0}
 --- !u!1 &1251739417
 GameObject:
   m_ObjectHideFlags: 0

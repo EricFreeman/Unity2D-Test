@@ -28,7 +28,8 @@ public class UpgradeMenu : MonoBehaviour
 
         _currentPlayer = new Player
         {
-            Money = 300
+            Money = 300,
+            Inventory = new List<Item>()
         };
 
         ChangeStoreCategory(ItemCategory.Weapon);
@@ -71,10 +72,7 @@ public class UpgradeMenu : MonoBehaviour
                 0);
 
             var s = child.GetComponent<StoreItem>();
-            s.ItemName = item.Name;
-            s.ItemDescription = item.Description;
-            s.ItemPrice = item.Price;
-            s.Category = item.Category;
+            s.Item = item;
 
             x++;
             if (x == columns)
@@ -89,5 +87,14 @@ public class UpgradeMenu : MonoBehaviour
     {
         SelectedPanel.SetActive(true);
         SelectedPanel.GetComponent<SelectedItem>().SelectItem(item);
+    }
+
+    public void Buy(StoreItem item)
+    {
+        if (item.Item.Price <= _currentPlayer.Money)
+        {
+            _currentPlayer.Money -= item.Item.Price;
+            _currentPlayer.Inventory.Add(item.Item);
+        }
     }
 }

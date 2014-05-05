@@ -24,9 +24,10 @@ public class SelectedItem : MonoBehaviour
 
     public void SelectItem(StoreItem item)
     {
-        Name = item.ItemName;
-        Description = item.ItemDescription;
-        Price = item.ItemPrice.ToString("c");
+        Name = item.Item.Name;
+        Description = item.Item.Description;
+        Price = item.Item.Price.ToString("c");
+        GetComponentInChildren<BuyButton>().StoreItem = item;
     }
 
     void SetLabel(string name, string value)

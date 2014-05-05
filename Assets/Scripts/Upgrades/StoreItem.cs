@@ -3,21 +3,17 @@ using UnityEngine;
 
 public class StoreItem : MonoBehaviour
 {
-    private string _itemName;
-
-    public string ItemName
+    private Item _item;
+    public Item Item
     {
-        get { return _itemName; }
+        get { return _item; }
         set
         {
-            _itemName = value;
+            _item = value;;
             var c = GetComponentInChildren<UILabel>();
-            c.text = value;
+            c.text = value.Name;
         }
     }
-    public string ItemDescription;
-    public float ItemPrice;
-    public ItemCategory Category;
 
     void OnClick()
     {
