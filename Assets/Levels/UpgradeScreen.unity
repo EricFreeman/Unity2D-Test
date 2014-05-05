@@ -1789,7 +1789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeMenu: {fileID: 368701921}
-  StoreItem: {fileID: 0}
 --- !u!1 &1251739417
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,21 +16,37 @@ public class UpgradeMenu : MonoBehaviour
 
     void Start()
     {
-        _storeItems.Add(new Item("Gun1", "Starter gun", 5, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Gun2", "Okay gun", 25, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Gun3", "Best gun", 250, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Gun4", "Best gun+", 2500, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Gun5", "Best gun++", 25000, ItemCategory.Weapon));
+        #region TODO: Load this stuff from files
 
-        _storeItems.Add(new Item("Armor1", "Starter armor", 5, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Armor2", "Okay armor", 25, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Armor3", "Best armor", 250, ItemCategory.ShipUpgrade));
+        _storeItems.Add(new Item("BB Gun", "Unless you're hunting tin cans in space, this weapon is pretty useless.", 5, ItemCategory.Weapon));
+        _storeItems.Add(new Item("Machine Gun", "Better than a BB Gun, but you still won't be doing a lot of damage out there.", 25, ItemCategory.Weapon));
+        _storeItems.Add(new Item("Laser Beams", "Pew pew pew!", 250, ItemCategory.Weapon));
+        _storeItems.Add(new Item("Plasma Cannon", "PEW PEW PEW!!", 2500, ItemCategory.Weapon));
+        _storeItems.Add(new Item("BFG 9000", "PEEEEEEEEEEEEEEEEEEEEEEEEEW!!!", 25000, ItemCategory.Weapon));
+
+        _storeItems.Add(new Item("Ship1", "Starter Ship", 5, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship2", "Okay Ship", 25, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship3", "Best Ship", 250, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship4", "Best Ship+", 2500, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship5", "Best Ship++", 25000, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship6", "Best Ship+++", 250000, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship7", "Best Ship++++", 2500000, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship8", "Best Ship+++++", 25000000, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship9", "Best Ship++++++", 250000000, ItemCategory.Ship));
+        _storeItems.Add(new Item("Ship10", "Warren Buffet used this ship when he conquered Earth in 3057.", 2500000000, ItemCategory.Ship));
+
+        _storeItems.Add(new Item("Armor 1", "Starter armor", 5, ItemCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Armor 2", "Okay armor", 25, ItemCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Armor 3", "Best armor", 250, ItemCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 250000, ItemCategory.ShipUpgrade));
 
         _currentPlayer = new Player
         {
             Money = 300,
             Inventory = new List<Item>()
         };
+
+        #endregion
 
         ChangeStoreCategory(ItemCategory.Weapon);
     }
@@ -56,9 +72,8 @@ public class UpgradeMenu : MonoBehaviour
         var itemHeight = 40;
 
         int columns = 3;
-        int xStart = (columns / 2)*(itemWidth + itemOffset) * -1;
-        int startY = (categoryItems.Count / columns / 2) * (itemHeight + itemOffset) * -1;
-        int yOffset = itemHeight * (_storeItems.Count / columns);
+        int startX = (columns / 2)*(itemWidth + itemOffset) * -1;
+        int startY = (((categoryItems.Count + columns - 1) / columns) * (itemHeight + itemOffset)) * -1;
 
         int x = 0, y = 0;
         
@@ -67,8 +82,8 @@ public class UpgradeMenu : MonoBehaviour
             var item = categoryItems[i];
             var child = NGUITools.AddChild(UIParent, ButtonPrefab);
             child.transform.localPosition = new Vector3(
-                xStart + x * (itemWidth + itemOffset),
-                startY + y * (itemHeight + itemOffset) * -1 + yOffset,
+                startX + x * (itemWidth + itemOffset),
+                (startY + y * (itemHeight + itemOffset)) * -1,
                 0);
 
             var s = child.GetComponent<StoreItem>();
