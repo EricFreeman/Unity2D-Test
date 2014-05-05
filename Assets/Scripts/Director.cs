@@ -17,6 +17,8 @@ namespace Assets.Scripts
         private bool _isPlayerDead;
         private bool _isLevelOver;
 
+        public Transform LevelCompleteGui;
+
         public float Money
         {
             get { return _money; }
@@ -64,41 +66,31 @@ namespace Assets.Scripts
             }
         }
 
-        private void OnGUI()
+        void ShowLevelCompleteScreen()
         {
-            if (_isPlayerDead || _isLevelOver)
+            LevelCompleteGui.gameObject.SetActive(true);
+
+            var lines = 3;
+            var text = "Level Over\r\n\r\n";
+            text += "Level Loot: {0}\r\n".ToFormat(_money.ToString("c"));
+
+            if (_isPlayerDead)
             {
-                var width = 200;
-                var height = 200;
-                var currentY = 0;
-                var lineHeight = 30;
-
-                var x = (Screen.width - width)/2;
-                var y = (Screen.height - height)/2;
-
-                GUI.BeginGroup(new Rect(x, y, width, height));
-
-                GUI.Label(new Rect(0, currentY, width, lineHeight), "Level Loot: $" + _money);
-                currentY += lineHeight;
-
-                if (_isPlayerDead)
-                {
-                    GUI.Label(new Rect(0, currentY, width, lineHeight), "Death Penalty (25%): -$" + _money*.25);
-                    currentY += lineHeight;
-                    GUI.Label(new Rect(0, currentY, width, lineHeight), "Total Level Loot: $" + _money*.75);
-                    currentY += lineHeight;
-                }
-
-                if (GUI.Button(new Rect(0, currentY, width, lineHeight), "Continue"))
-                    Application.LoadLevel("UpgradeScreen");
-
-                GUI.EndGroup();
+                lines += 2;
+                text += "Death Penalty (25%): {0}\r\n".ToFormat((_money*-.25).ToString("c"));
+                text += "Total Level Loot: {0}".ToFormat((_money * .75).ToString("c"));
             }
+
+            GameObject.Find("LevelCompleteLabel").GetComponent<UILabel>().text = text;
         }
 
         // Update is called once per frame
         private void Update()
         {
+            if (_isPlayerDead || _isLevelOver)
+            {
+                ShowLevelCompleteScreen();
+            }
             var p = GameObject.FindGameObjectWithTag("Player");
             if (p != null)
             {
