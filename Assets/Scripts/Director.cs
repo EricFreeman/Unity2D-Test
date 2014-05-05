@@ -25,7 +25,7 @@ namespace Assets.Scripts
             set
             {
                 _money = value;
-                GameObject.Find("MoneyText").guiText.text = "Money: $" + _money;
+                GameObject.Find("MoneyText").GetComponent<UILabel>().text = "Money: $" + _money;
             }
         }
 
