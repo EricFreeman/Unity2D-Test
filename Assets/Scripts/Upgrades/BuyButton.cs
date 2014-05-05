@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Upgrades;
+using UnityEngine;
 
 public class BuyButton : MonoBehaviour
 {
     public Transform UpgradeMenu;
-    public StoreItem StoreItem;
+    public Item Item;
 
     void OnClick()
     {
-        UpgradeMenu.GetComponent<UpgradeMenu>().Buy(StoreItem);
+        UpgradeMenu.GetComponent<UpgradeMenu>().Buy(Item);
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Upgrades;
+using UnityEngine;
 
 public class SelectedItem : MonoBehaviour
 {
@@ -22,12 +23,12 @@ public class SelectedItem : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SelectItem(StoreItem item)
+    public void SelectItem(Item item)
     {
-        Name = item.Item.Name;
-        Description = item.Item.Description;
-        Price = item.Item.Price.ToString("c");
-        GetComponentInChildren<BuyButton>().StoreItem = item;
+        Name = item.Name;
+        Description = item.Description;
+        Price = item.Price.ToString("c");
+        GetComponentInChildren<BuyButton>().Item = item;
     }
 
     void SetLabel(string name, string value)

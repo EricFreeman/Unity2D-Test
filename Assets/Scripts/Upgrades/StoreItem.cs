@@ -17,6 +17,6 @@ public class StoreItem : MonoBehaviour
 
     void OnClick()
     {
-        GameObject.Find("GUI").GetComponent<UpgradeMenu>().Select(this);
+        GameObject.Find("GUI").GetComponent<UpgradeMenu>().Select(Item);
     }
 }

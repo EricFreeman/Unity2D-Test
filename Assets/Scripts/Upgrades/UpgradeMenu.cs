@@ -83,18 +83,18 @@ public class UpgradeMenu : MonoBehaviour
         }
     }
 
-    public void Select(StoreItem item)
+    public void Select(Item item)
     {
         SelectedPanel.SetActive(true);
         SelectedPanel.GetComponent<SelectedItem>().SelectItem(item);
     }
 
-    public void Buy(StoreItem item)
+    public void Buy(Item item)
     {
-        if (item.Item.Price <= _currentPlayer.Money)
+        if (item.Price <= _currentPlayer.Money)
         {
-            _currentPlayer.Money -= item.Item.Price;
-            _currentPlayer.Inventory.Add(item.Item);
+            _currentPlayer.Money -= item.Price;
+            _currentPlayer.Inventory.Add(item);
         }
     }
 }
