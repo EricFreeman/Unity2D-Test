@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class StoreItem : MonoBehaviour
 {
+    private string _itemName;
+
     public string ItemName
     {
         get { return _itemName; }
@@ -13,10 +15,12 @@ public class StoreItem : MonoBehaviour
             c.text = value;
         }
     }
-
     public string ItemDescription;
     public float ItemPrice;
-
     public ItemCategory Category;
-    private string _itemName;
+
+    void OnClick()
+    {
+        GameObject.Find("GUI").GetComponent<UpgradeMenu>().Select(this);
+    }
 }

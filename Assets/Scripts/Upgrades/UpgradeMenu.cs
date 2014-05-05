@@ -37,7 +37,8 @@ public class UpgradeMenu : MonoBehaviour
     {
         foreach (Transform child in UIParent.transform)
         {
-            Destroy(child.gameObject);
+            if (child.name != "SelectedPanel")
+                Destroy(child.gameObject);
         }
     }
 
@@ -55,6 +56,7 @@ public class UpgradeMenu : MonoBehaviour
         int columns = 3;
         int xStart = (columns / 2)*(itemWidth + itemOffset) * -1;
         int startY = (categoryItems.Count / columns / 2) * (itemHeight + itemOffset) * -1;
+        int yOffset = itemHeight * (_storeItems.Count / columns);
 
         int x = 0, y = 0;
         
@@ -64,7 +66,7 @@ public class UpgradeMenu : MonoBehaviour
             var child = NGUITools.AddChild(UIParent, ButtonPrefab);
             child.transform.localPosition = new Vector3(
                 xStart + x * (itemWidth + itemOffset),
-                startY + y * (itemHeight + itemOffset) * -1,
+                startY + y * (itemHeight + itemOffset) * -1 + yOffset,
                 0);
 
             var s = child.GetComponent<StoreItem>();
@@ -80,5 +82,10 @@ public class UpgradeMenu : MonoBehaviour
                 y++;
             }
         }
+    }
+
+    public void Select(StoreItem item)
+    {
+        GameObject.Find("SelectedPanel").GetComponent<SelectedItem>().SelectItem(item);
     }
 }
