@@ -31,7 +31,10 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            LoadLevel("TestLevel");
+            var level = PlayerPrefs.GetString("SelectedLevel");
+            if (level.IsEmpty()) level = "TestLevel"; // this is only really for debugging and will never happen in the real game
+
+            LoadLevel(level);
         }
 
         private void LoadLevel(string levelName)

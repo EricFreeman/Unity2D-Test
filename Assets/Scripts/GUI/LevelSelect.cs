@@ -12,7 +12,7 @@ public class LevelSelect : MonoBehaviour
             label.text = LevelName;
     }
 
-    void OnCLick()
+    void OnClick()
     {
         PlayerPrefs.SetString("SelectedLevel", LevelName);
     }
