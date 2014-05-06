@@ -1,4 +1,4 @@
-//----------------------------------------------
+﻿//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2013 Tasharen Entertainment
 //----------------------------------------------
@@ -221,7 +221,7 @@ public class UIPanelInspector : Editor
 #if !UNITY_3_5 && !UNITY_4_0 && (UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8 || UNITY_BLACKBERRY)
 			if (PlayerSettings.targetGlesGraphics == TargetGlesGraphics.OpenGLES_1_x)
 			{
-				EditorGUILayout.HelpBox("Clipping requires shader support!\n\nOpen File -> Build Settings -> Player Settings -> Other Settings, then set:\n\n- Graphics Level: OpenGL ES 2.0.", MessageType.Error);
+				EditorGUILayout.HelpBox("Clipping requires shader support!\n\nOpen File -> Build Settings -> PlayerModel Settings -> Other Settings, then set:\n\n- Graphics Level: OpenGL ES 2.0.", MessageType.Error);
 			}
 #endif
 		}

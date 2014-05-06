@@ -7,6 +7,8 @@
         public float Price { get; set; }
         public ItemCategory Category { get; set; }
 
+        public Item() { }
+
         public Item(string name, string description, float price, ItemCategory category)
         {
             Name = name;

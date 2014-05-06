@@ -3,6 +3,7 @@ using System.Linq;
 using System.Xml;
 using Assets.Extensions;
 using Assets.Models;
+using Assets.Services;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -81,21 +82,24 @@ namespace Assets.Scripts
             {
                 text += "Death Penalty (25%): {0}\r\n".ToFormat((_money*-.25).ToString("c"));
                 text += "Total Level Loot: {0}".ToFormat((_money * .75).ToString("c"));
+                SaveGame(_money * .75f);
             }
 
             GameObject.Find("LevelCompleteLabel").GetComponent<UILabel>().text = text;
 
-            if (!_isGameSaved)
-            {
-                SaveGame();
-                _isGameSaved = true;
-            }
+            SaveGame(_money);
         }
 
-        void SaveGame()
+        void SaveGame(float totalEarned)
         {
-            var p = PlayerPrefs.GetFloat("Money");
-            PlayerPrefs.SetFloat("Money", p + _money);
+            if (!_isGameSaved)
+            {
+                _isGameSaved = true;
+                var manager = new XmlManager<PlayerModel>();
+                var player = manager.Load("savegame1.xml");
+                player.Money += totalEarned;
+                manager.Save("savegame1.xml", player);
+            }
         }
 
         // Update is called once per frame

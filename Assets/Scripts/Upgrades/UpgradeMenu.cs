@@ -2,13 +2,14 @@
 using System.Linq;
 using Assets.Models;
 using Assets.Scripts.Upgrades;
+using Assets.Services;
 using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
 {
     private ItemCategory _selectedCategory;
     private List<Item> _storeItems = new List<Item>();
-    private Player _currentPlayer { get; set; }
+    private PlayerModel _currentPlayer { get; set; }
 
     private float _money;
     public float Money
@@ -51,17 +52,25 @@ public class UpgradeMenu : MonoBehaviour
         _storeItems.Add(new Item("Armor 3", "Best armor", 250, ItemCategory.ShipUpgrade));
         _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 250000, ItemCategory.ShipUpgrade));
 
-        _currentPlayer = new Player
-        {
-            Money = 300,
-            Inventory = new List<Item>()
-        };
+//        var manager = new XmlManager<PlayerModel>();
+//
+//        _currentPlayer = new PlayerModel
+//        {
+//            Money = 300,
+//            Inventory = new List<Item>(),
+//            EquippedItems = new List<Item>()
+//        };
+//
+//        manager.Save("savegame1.xml", _currentPlayer);
 
         #endregion
 
         ChangeStoreCategory(ItemCategory.Weapon);
 
-        Money = PlayerPrefs.GetFloat("Money");
+        var manager = new XmlManager<PlayerModel>();
+        _currentPlayer = manager.Load("savegame1.xml");
+        Money = _currentPlayer.Money;
+
     }
 
     void ClearCurrentItems()
