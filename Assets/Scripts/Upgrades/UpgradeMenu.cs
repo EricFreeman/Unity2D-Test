@@ -10,6 +10,17 @@ public class UpgradeMenu : MonoBehaviour
     private List<Item> _storeItems = new List<Item>();
     private Player _currentPlayer { get; set; }
 
+    private float _money;
+    public float Money
+    {
+        get { return _money; }
+        set
+        {
+            _money = value;
+            GameObject.Find("MoneyLabel").GetComponent<UILabel>().text = value.ToString("c");
+        }
+    }
+
     public GameObject UIParent;
     public GameObject ButtonPrefab;
     public GameObject SelectedPanel;
@@ -49,6 +60,8 @@ public class UpgradeMenu : MonoBehaviour
         #endregion
 
         ChangeStoreCategory(ItemCategory.Weapon);
+
+        Money = PlayerPrefs.GetFloat("Money");
     }
 
     void ClearCurrentItems()

@@ -13,6 +13,7 @@ namespace Assets.Scripts
         private float _waveDelay;
         private readonly List<Wave> _waves = new List<Wave>();
         private float _money;
+        private bool _isGameSaved;
 
         private bool _isPlayerDead;
         private bool _isLevelOver;
@@ -73,18 +74,28 @@ namespace Assets.Scripts
         {
             LevelCompleteGui.gameObject.SetActive(true);
 
-            var lines = 3;
             var text = "Level Over\r\n\r\n";
             text += "Level Loot: {0}\r\n".ToFormat(_money.ToString("c"));
 
             if (_isPlayerDead)
             {
-                lines += 2;
                 text += "Death Penalty (25%): {0}\r\n".ToFormat((_money*-.25).ToString("c"));
                 text += "Total Level Loot: {0}".ToFormat((_money * .75).ToString("c"));
             }
 
             GameObject.Find("LevelCompleteLabel").GetComponent<UILabel>().text = text;
+
+            if (!_isGameSaved)
+            {
+                SaveGame();
+                _isGameSaved = true;
+            }
+        }
+
+        void SaveGame()
+        {
+            var p = PlayerPrefs.GetFloat("Money");
+            PlayerPrefs.SetFloat("Money", p + _money);
         }
 
         // Update is called once per frame
