@@ -19,6 +19,7 @@ public class UpgradeMenu : MonoBehaviour
         {
             _money = value;
             GameObject.Find("MoneyLabel").GetComponent<UILabel>().text = value.ToString("c");
+            _currentPlayer.Money = value;
         }
     }
 
@@ -70,7 +71,6 @@ public class UpgradeMenu : MonoBehaviour
         var manager = new XmlManager<PlayerModel>();
         _currentPlayer = manager.Load("savegame1.xml");
         Money = _currentPlayer.Money;
-
     }
 
     void ClearCurrentItems()
@@ -130,8 +130,16 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (item.Price <= _currentPlayer.Money)
         {
-            _currentPlayer.Money -= item.Price;
+            Debug.Log("buy");
+            Money -= item.Price;
             _currentPlayer.Inventory.Add(item);
+            SavePlayer();
         }
+    }
+
+    public void SavePlayer()
+    {
+        var manager = new XmlManager<PlayerModel>();
+        manager.Save("savegame1.xml", _currentPlayer);
     }
 }
