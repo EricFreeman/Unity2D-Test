@@ -32,6 +32,9 @@ public class InventoryMenu : MonoBehaviour
             i.transform.parent = Grid;
             i.transform.localScale = Vector3.one;
 
+            i.GetComponentInChildren<ItemSelectButton>().Item = inv;
+            i.GetComponentInChildren<ItemSelectButton>().Gui = transform;
+
             i.GetComponentInChildren<UILabel>().text = inv.Name;
         }
         Grid.GetComponent<UIGrid>().repositionNow = true;
@@ -41,6 +44,15 @@ public class InventoryMenu : MonoBehaviour
     {
         foreach (Transform child in Grid.transform)
             Destroy(child.gameObject);
+    }
+
+    public void Select(Item item)
+    {
+        SelectedItemLabel.gameObject.SetActive(true);
+        EquipButton.gameObject.SetActive(_currentPlayer.EquippedItems.Contains(item));
+        UnequipButton.gameObject.SetActive(_currentPlayer.Inventory.Contains(item));
+        SelectedItemLabel.GetComponent<UILabel>().text = item.Name;
+        Grid.GetComponent<UIGrid>().repositionNow = true;
     }
 
     public void Equip(Item item)
