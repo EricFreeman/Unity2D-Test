@@ -130,54 +130,6 @@ MonoBehaviour:
   mShrinkToFit: 1
   mLineWidth: 0
   mMultiline: 1
---- !u!1 &42412121
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 42412122}
-  - 114: {fileID: 42412123}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &42412122
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 42412121}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 20, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1126017620}
-  - {fileID: 2040959811}
-  - {fileID: 165806399}
-  m_Father: {fileID: 788352864}
---- !u!114 &42412123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 42412121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c4de3b4b6fe9045b059ee627c100df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrangement: 0
-  maxPerLine: 0
-  cellWidth: 200
-  cellHeight: 200
-  repositionNow: 0
-  sorted: 1
-  hideInactive: 1
 --- !u!1 &165806398
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +143,7 @@ GameObject:
   - 114: {fileID: 165806402}
   - 114: {fileID: 165806401}
   - 114: {fileID: 165806400}
+  - 114: {fileID: 165806405}
   m_Layer: 0
   m_Name: UnequipButton
   m_TagString: Untagged
@@ -205,12 +158,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 165806398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: -0, z: 0}
+  m_LocalPosition: {x: 200, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1110335189}
   - {fileID: 915382544}
-  m_Father: {fileID: 42412122}
+  m_Father: {fileID: 788352864}
 --- !u!114 &165806400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +237,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 75, y: 30, z: 0}
   m_Center: {x: .000152587891, y: 1.14440918e-05, z: -.75}
+--- !u!114 &165806405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 165806398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c65581bcb7d784abb6764e0a5a97cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gui: {fileID: 1575321676}
 --- !u!1 &626378608
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,10 +328,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788352863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -129.594086, y: -229, z: 0}
+  m_LocalPosition: {x: -179.937027, y: -318.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 42412122}
+  - {fileID: 2040959811}
+  - {fileID: 1126017620}
+  - {fileID: 165806399}
   m_Father: {fileID: 1388413998}
 --- !u!114 &788352865
 MonoBehaviour:
@@ -504,6 +471,7 @@ GameObject:
   - 114: {fileID: 1126017623}
   - 114: {fileID: 1126017622}
   - 114: {fileID: 1126017621}
+  - 114: {fileID: 1126017626}
   m_Layer: 0
   m_Name: EquipButton
   m_TagString: Untagged
@@ -518,12 +486,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1126017619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200, y: -0, z: 0}
+  m_LocalPosition: {x: 100, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1968603562}
   - {fileID: 626378609}
-  m_Father: {fileID: 42412122}
+  m_Father: {fileID: 788352864}
 --- !u!114 &1126017621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,6 +565,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 75, y: 30, z: 0}
   m_Center: {x: .000152587891, y: 1.14440918e-05, z: -1.25}
+--- !u!114 &1126017626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126017619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e0c70521e73874e9739279f6e08ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gui: {fileID: 1575321676}
 --- !u!1 &1388413996
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,17 +885,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 229.5
+    e00: 319
     e01: 0
     e02: 0
-    e03: -4589.49951
+    e03: -6379.00049
     e10: 0
-    e11: 229.5
+    e11: 319
     e12: 0
-    e13: -230
+    e13: -319.5
     e20: 0
     e21: 0
-    e22: 229.5
+    e22: 319
     e23: 0
     e30: 0
     e31: 0
@@ -1024,7 +1004,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1783479112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.500332832, y: 230, z: 0}
+  m_LocalPosition: {x: -.999673843, y: 319.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1781493764}
@@ -1102,17 +1082,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 229.5
+    e00: 319
     e01: 0
     e02: 0
-    e03: -4589.49951
+    e03: -6379.00049
     e10: 0
-    e11: 229.5
+    e11: 319
     e12: 0
-    e13: -230
+    e13: -319.5
     e20: 0
     e21: 0
-    e22: 229.5
+    e22: 319
     e23: 0
     e30: 0
     e31: 0
@@ -1193,11 +1173,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2040959810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 5.00021362, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 27042412}
-  m_Father: {fileID: 42412122}
+  m_Father: {fileID: 788352864}
 --- !u!1 &2041306526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1251,7 @@ Transform:
   m_GameObject: {fileID: 2126233338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20, y: 0, z: 0}
-  m_LocalScale: {x: .00435729837, y: .00435729837, z: .00435729837}
+  m_LocalScale: {x: .00313479616, y: .00313479616, z: .00313479616}
   m_Children:
   - {fileID: 1388413998}
   m_Father: {fileID: 0}
@@ -1309,17 +1289,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 229.5
+    e00: 319
     e01: 0
     e02: 0
-    e03: -4590
+    e03: -6380
     e10: 0
-    e11: 229.5
+    e11: 319
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 229.5
+    e22: 319
     e23: 0
     e30: 0
     e31: 0

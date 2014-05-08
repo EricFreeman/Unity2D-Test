@@ -49,10 +49,13 @@ public class InventoryMenu : MonoBehaviour
     public void Select(Item item)
     {
         SelectedItemLabel.gameObject.SetActive(true);
-        EquipButton.gameObject.SetActive(_currentPlayer.EquippedItems.Contains(item));
-        UnequipButton.gameObject.SetActive(_currentPlayer.Inventory.Contains(item));
+        EquipButton.gameObject.SetActive(_currentPlayer.Inventory.Contains(item));
+        UnequipButton.gameObject.SetActive(_currentPlayer.EquippedItems.Contains(item));
         SelectedItemLabel.GetComponent<UILabel>().text = item.Name;
         Grid.GetComponent<UIGrid>().repositionNow = true;
+
+        EquipButton.GetComponent<EquipItem>().Item = item;
+        UnequipButton.GetComponent<UnequipItem>().Item = item;
     }
 
     public void Equip(Item item)
