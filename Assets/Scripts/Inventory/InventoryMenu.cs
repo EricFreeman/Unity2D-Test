@@ -6,6 +6,12 @@ using UnityEngine;
 public class InventoryMenu : MonoBehaviour
 {
     private PlayerModel _currentPlayer;
+    public int MaxItems = 3;
+
+    private int _equippedItemsCount
+    {
+        get { return _currentPlayer.EquippedItems.Count; }
+    }
 
     // Top Bar
     public Transform Grid;
@@ -27,23 +33,35 @@ public class InventoryMenu : MonoBehaviour
     {
         ClearInventoryGrid();
         foreach (var inv in _currentPlayer.Inventory)
-        {
-            var i = (GameObject)Instantiate(Resources.Load("Prefabs/GUI/InventoryItem"));
-            i.transform.parent = Grid;
-            i.transform.localScale = Vector3.one;
-
-            i.GetComponentInChildren<ItemSelectButton>().Item = inv;
-            i.GetComponentInChildren<ItemSelectButton>().Gui = transform;
-
-            i.GetComponentInChildren<UILabel>().text = inv.Name;
-        }
-        Grid.GetComponent<UIGrid>().repositionNow = true;
+            AddItemToGrid(inv);
     }
 
     void ClearInventoryGrid()
     {
         foreach (Transform child in Grid.transform)
-            Destroy(child.gameObject);
+            NGUITools.Destroy(child.gameObject);
+    }
+
+    void RemoveItemFromGrid(Item item)
+    {
+        foreach (Transform child in Grid.transform)
+            if(child.GetComponentInChildren<ItemSelectButton>().Item == item)
+                NGUITools.Destroy(child.gameObject);
+
+        Grid.GetComponent<UIGrid>().repositionNow = true;
+    }
+
+    void AddItemToGrid(Item item)
+    {
+        var i = (GameObject)Instantiate(Resources.Load("Prefabs/GUI/InventoryItem"));
+        i.transform.parent = Grid;
+        i.transform.localScale = Vector3.one;
+
+        i.GetComponentInChildren<ItemSelectButton>().Item = item;
+        i.GetComponentInChildren<ItemSelectButton>().Gui = transform;
+        i.GetComponentInChildren<UILabel>().text = item.Name;
+
+        Grid.GetComponent<UIGrid>().repositionNow = true;
     }
 
     public void Select(Item item)
@@ -60,13 +78,20 @@ public class InventoryMenu : MonoBehaviour
 
     public void Equip(Item item)
     {
-        _currentPlayer.Inventory.Remove(item);
-        _currentPlayer.EquippedItems.Add(item);
+        if (_equippedItemsCount < MaxItems)
+        {
+            _currentPlayer.Inventory.Remove(item);
+            _currentPlayer.EquippedItems.Add(item);
+            Select(item);
+            RemoveItemFromGrid(item);
+        }
     }
 
     public void Unequip(Item item)
     {
         _currentPlayer.EquippedItems.Remove(item);
         _currentPlayer.Inventory.Add(item);
+        Select(item);
+        AddItemToGrid(item);
     }
 }
