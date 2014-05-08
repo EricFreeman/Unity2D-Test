@@ -90,6 +90,8 @@ public class InventoryMenu : MonoBehaviour
             _currentPlayer.EquippedItems.Add(item);
             Select(item);
             EquipItemToGrid(item, true);
+
+            SavePlayer();
         }
     }
 
@@ -99,5 +101,13 @@ public class InventoryMenu : MonoBehaviour
         _currentPlayer.Inventory.Add(item);
         Select(item);
         EquipItemToGrid(item, false);
+
+        SavePlayer();
+    }
+
+    void SavePlayer()
+    {
+        var manager = new XmlManager<PlayerModel>();
+        manager.Save("savegame1.xml", _currentPlayer);
     }
 }
