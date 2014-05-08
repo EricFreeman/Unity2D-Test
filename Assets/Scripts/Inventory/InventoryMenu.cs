@@ -33,27 +33,36 @@ public class InventoryMenu : MonoBehaviour
     void ReloadInventory()
     {
         ClearInventoryGrid();
+
         foreach (var inv in _currentPlayer.Inventory)
-            AddItemToGrid(inv);
+            AddItemToGrid(inv, Grid);
+
+        foreach (var inv in _currentPlayer.EquippedItems)
+            AddItemToGrid(inv, EquippedGrid);
     }
 
     void ClearInventoryGrid()
     {
         foreach (Transform child in Grid.transform)
             NGUITools.Destroy(child.gameObject);
+
+        Grid.GetComponent<UIGrid>().repositionNow = true;
+
+        foreach (Transform child in EquippedGrid.transform)
+            NGUITools.Destroy(child.gameObject);
+
+        EquippedGrid.GetComponent<UIGrid>().repositionNow = true;
     }
 
-    void AddItemToGrid(Item item)
+    void AddItemToGrid(Item item, Transform grid)
     {
         var i = (GameObject)Instantiate(Resources.Load("Prefabs/GUI/InventoryItem"));
-        i.transform.parent = Grid;
+        i.transform.parent = grid;
         i.transform.localScale = Vector3.one;
 
         i.GetComponentInChildren<ItemSelectButton>().Item = item;
         i.GetComponentInChildren<ItemSelectButton>().Gui = transform;
         i.GetComponentInChildren<UILabel>().text = item.Name;
-
-        Grid.GetComponent<UIGrid>().repositionNow = true;
     }
 
     void EquipItemToGrid(Item item, bool equip)
