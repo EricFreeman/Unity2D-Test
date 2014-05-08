@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Managers;
 using Assets.Models;
 using Assets.Scripts.Upgrades;
-using Assets.Services;
 using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
@@ -68,8 +68,7 @@ public class UpgradeMenu : MonoBehaviour
 
         ChangeStoreCategory(ItemCategory.Weapon);
 
-        var manager = new XmlManager<PlayerModel>();
-        _currentPlayer = manager.Load("savegame1.xml");
+        _currentPlayer = PlayerManager.Load();
         Money = _currentPlayer.Money;
     }
 
@@ -130,7 +129,6 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (item.Price <= _currentPlayer.Money)
         {
-            Debug.Log("buy");
             Money -= item.Price;
             _currentPlayer.Inventory.Add(item);
             SavePlayer();
@@ -139,7 +137,6 @@ public class UpgradeMenu : MonoBehaviour
 
     public void SavePlayer()
     {
-        var manager = new XmlManager<PlayerModel>();
-        manager.Save("savegame1.xml", _currentPlayer);
+        PlayerManager.Save(_currentPlayer);
     }
 }

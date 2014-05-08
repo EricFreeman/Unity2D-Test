@@ -1,6 +1,6 @@
-﻿using Assets.Models;
+﻿using Assets.Managers;
+using Assets.Models;
 using Assets.Scripts.Upgrades;
-using Assets.Services;
 using UnityEngine;
 
 public class InventoryMenu : MonoBehaviour
@@ -26,9 +26,7 @@ public class InventoryMenu : MonoBehaviour
 
     void Start()
     {
-        var manager = new XmlManager<PlayerModel>();
-        _currentPlayer = manager.Load("savegame1.xml");
-
+        _currentPlayer = PlayerManager.Load();
         ReloadInventory();
     }
 
@@ -107,7 +105,6 @@ public class InventoryMenu : MonoBehaviour
 
     void SavePlayer()
     {
-        var manager = new XmlManager<PlayerModel>();
-        manager.Save("savegame1.xml", _currentPlayer);
+        PlayerManager.Save(_currentPlayer);
     }
 }

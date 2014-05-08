@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Xml;
 using Assets.Extensions;
+using Assets.Managers;
 using Assets.Models;
-using Assets.Services;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -95,10 +95,9 @@ namespace Assets.Scripts
             if (!_isGameSaved)
             {
                 _isGameSaved = true;
-                var manager = new XmlManager<PlayerModel>();
-                var player = manager.Load("savegame1.xml");
+                var player = PlayerManager.Load();
                 player.Money += totalEarned;
-                manager.Save("savegame1.xml", player);
+                PlayerManager.Save(player);
             }
         }
 
