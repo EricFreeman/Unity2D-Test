@@ -16,6 +16,9 @@ public class InventoryMenu : MonoBehaviour
     // Top Bar
     public Transform Grid;
 
+    // Center Bar
+    public Transform EquippedGrid;
+
     // Bottom Bar
     public Transform SelectedItemLabel;
     public Transform EquipButton;
@@ -42,15 +45,6 @@ public class InventoryMenu : MonoBehaviour
             NGUITools.Destroy(child.gameObject);
     }
 
-    void RemoveItemFromGrid(Item item)
-    {
-        foreach (Transform child in Grid.transform)
-            if(child.GetComponentInChildren<ItemSelectButton>().Item == item)
-                NGUITools.Destroy(child.gameObject);
-
-        Grid.GetComponent<UIGrid>().repositionNow = true;
-    }
-
     void AddItemToGrid(Item item)
     {
         var i = (GameObject)Instantiate(Resources.Load("Prefabs/GUI/InventoryItem"));
@@ -64,6 +58,17 @@ public class InventoryMenu : MonoBehaviour
         Grid.GetComponent<UIGrid>().repositionNow = true;
     }
 
+    void EquipItemToGrid(Item item, bool equip)
+    {
+        var listToSearch = equip ? Grid.transform : EquippedGrid.transform;
+        foreach (Transform child in listToSearch)
+            if (child.GetComponentInChildren<ItemSelectButton>().Item == item)
+                child.parent = equip ? EquippedGrid : Grid;
+
+        Grid.GetComponent<UIGrid>().repositionNow = true;
+        EquippedGrid.GetComponent<UIGrid>().repositionNow = true;
+    }
+
     public void Select(Item item)
     {
         SelectedItemLabel.gameObject.SetActive(true);
@@ -71,6 +76,7 @@ public class InventoryMenu : MonoBehaviour
         UnequipButton.gameObject.SetActive(_currentPlayer.EquippedItems.Contains(item));
         SelectedItemLabel.GetComponent<UILabel>().text = item.Name;
         Grid.GetComponent<UIGrid>().repositionNow = true;
+        EquippedGrid.GetComponent<UIGrid>().repositionNow = true;
 
         EquipButton.GetComponent<EquipItem>().Item = item;
         UnequipButton.GetComponent<UnequipItem>().Item = item;
@@ -83,7 +89,7 @@ public class InventoryMenu : MonoBehaviour
             _currentPlayer.Inventory.Remove(item);
             _currentPlayer.EquippedItems.Add(item);
             Select(item);
-            RemoveItemFromGrid(item);
+            EquipItemToGrid(item, true);
         }
     }
 
@@ -92,6 +98,6 @@ public class InventoryMenu : MonoBehaviour
         _currentPlayer.EquippedItems.Remove(item);
         _currentPlayer.Inventory.Add(item);
         Select(item);
-        AddItemToGrid(item);
+        EquipItemToGrid(item, false);
     }
 }

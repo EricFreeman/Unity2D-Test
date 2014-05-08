@@ -249,6 +249,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gui: {fileID: 1575321676}
+--- !u!1 &589461050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 589461051}
+  - 114: {fileID: 589461052}
+  m_Layer: 0
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &589461051
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 589461050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1395550068}
+--- !u!114 &589461052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 589461050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mDepth: 0
+  mFont: {fileID: 11400000, guid: ac44b8a25154a9d40a172ab5851e0986, type: 2}
+  mText: Equipped Items
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mPassword: 0
+  mShowLastChar: 0
+  mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mShrinkToFit: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &626378608
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +384,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788352863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -129.408051, y: -229.185623, z: 0}
+  m_LocalPosition: {x: -129.594086, y: -229, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2040959811}
@@ -577,6 +633,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gui: {fileID: 1575321676}
+--- !u!1 &1288113000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1288113001}
+  - 114: {fileID: 1288113002}
+  m_Layer: 0
+  m_Name: EquipGrid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1288113001
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288113000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1395550068}
+--- !u!114 &1288113002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288113000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c4de3b4b6fe9045b059ee627c100df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrangement: 0
+  maxPerLine: 0
+  cellWidth: 75
+  cellHeight: 75
+  repositionNow: 0
+  sorted: 0
+  hideInactive: 1
 --- !u!1 &1388413996
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +736,7 @@ Transform:
   m_Children:
   - {fileID: 1783479114}
   - {fileID: 788352864}
+  - {fileID: 1395550068}
   m_Father: {fileID: 2126233339}
 --- !u!114 &1388413999
 MonoBehaviour:
@@ -672,6 +774,34 @@ MonoBehaviour:
   submitKey1: 330
   cancelKey0: 27
   cancelKey1: 331
+--- !u!1 &1395550067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1395550068}
+  m_Layer: 0
+  m_Name: Anchor Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395550068
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395550067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1288113001}
+  - {fileID: 589461051}
+  m_Father: {fileID: 1388413998}
 --- !u!1 &1506446507
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,6 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxItems: 3
   Grid: {fileID: 1743176151}
+  EquippedGrid: {fileID: 1288113001}
   SelectedItemLabel: {fileID: 27042412}
   EquipButton: {fileID: 1126017620}
   UnequipButton: {fileID: 165806399}
@@ -886,17 +1017,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 365
+    e00: 229.5
     e01: 0
     e02: 0
-    e03: -7299.37207
+    e03: -4589.49951
     e10: 0
-    e11: 365
+    e11: 229.5
     e12: 0
-    e13: -229.814377
+    e13: -230
     e20: 0
     e21: 0
-    e22: 365
+    e22: 229.5
     e23: 0
     e30: 0
     e31: 0
@@ -1005,7 +1136,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1783479112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.628151894, y: 229.814377, z: 0}
+  m_LocalPosition: {x: -.500332832, y: 230, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1781493764}
@@ -1083,17 +1214,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 365
+    e00: 229.5
     e01: 0
     e02: 0
-    e03: -7299.37207
+    e03: -4589.49951
     e10: 0
-    e11: 365
+    e11: 229.5
     e12: 0
-    e13: -229.814377
+    e13: -230
     e20: 0
     e21: 0
-    e22: 365
+    e22: 229.5
     e23: 0
     e30: 0
     e31: 0
@@ -1252,7 +1383,7 @@ Transform:
   m_GameObject: {fileID: 2126233338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20, y: 0, z: 0}
-  m_LocalScale: {x: .0027397261, y: .0027397261, z: .0027397261}
+  m_LocalScale: {x: .00435729837, y: .00435729837, z: .00435729837}
   m_Children:
   - {fileID: 1388413998}
   m_Father: {fileID: 0}
@@ -1290,17 +1421,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 365
+    e00: 229.5
     e01: 0
     e02: 0
-    e03: -7300
+    e03: -4590
     e10: 0
-    e11: 365
+    e11: 229.5
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 365
+    e22: 229.5
     e23: 0
     e30: 0
     e31: 0
