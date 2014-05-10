@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .490196079, g: .447058827, b: 1, a: 1}
   mPivot: 4
   mDepth: 0
   mAtlas: {fileID: 11400000, guid: 2f2473f73b9ca724f9080d6d76009ea2, type: 2}
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 12663080}
-  hover: {r: .600000024, g: 1, b: .200000003, a: 1}
+  hover: {r: .458823532, g: .282352954, b: 1, a: 1}
   pressed: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752a8a2d0abdcfa48a979651537d4ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: LevelSelect
+  SceneName: GameMenuSelect
 --- !u!1 &1110335188
 GameObject:
   m_ObjectHideFlags: 0

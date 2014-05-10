@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752a8a2d0abdcfa48a979651537d4ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: UpgradeScreen
+  SceneName: GameMenuSelect
 --- !u!1 &1388751907
 GameObject:
   m_ObjectHideFlags: 0

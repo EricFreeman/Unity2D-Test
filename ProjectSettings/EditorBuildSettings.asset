@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Levels/UpgradeScreen.unity
   - enabled: 1
     path: Assets/Levels/LevelSelect.unity
+  - enabled: 1
+    path: Assets/Levels/InventoryScreen.unity
+  - enabled: 1
+    path: Assets/Levels/GameMenuSelect.unity
