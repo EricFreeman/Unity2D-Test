@@ -89,6 +89,14 @@ public class InventoryMenu : MonoBehaviour
         UnequipButton.GetComponent<UnequipItem>().Item = item;
     }
 
+    public void DoubleClick(Item item)
+    {
+        if(_currentPlayer.Inventory.Contains(item))
+            Equip(item);
+        else if(_currentPlayer.EquippedItems.Contains(item))
+            Unequip(item);
+    }
+
     public void Equip(Item item)
     {
         if (_equippedItemsCount < MaxItems)

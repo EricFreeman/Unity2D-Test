@@ -11,4 +11,10 @@ public class ItemSelectButton : MonoBehaviour
         var gui = Gui.GetComponent<InventoryMenu>();
         gui.Select(Item);
     }
+
+    void OnDoubleClick()
+    {
+        var gui = Gui.GetComponent<InventoryMenu>();
+        gui.DoubleClick(Item);
+    }
 }
