@@ -37,6 +37,7 @@ namespace Assets.Scripts
             if (level.IsEmpty()) level = "TestLevel"; // this is only really for debugging and will never happen in the real game
 
             LoadLevel(level);
+            LoadPlayer();
         }
 
         private void LoadLevel(string levelName)
@@ -68,6 +69,18 @@ namespace Assets.Scripts
                 }
 
                 _waves.Add(w);
+            }
+        }
+
+        private void LoadPlayer()
+        {
+            var player = PlayerManager.Load();
+            var p = GameObject.Find("Player");
+            foreach (var item in player.EquippedItems)
+            {
+                var i = (GameObject)Instantiate(Resources.Load("Prefabs/Items/" + item.Name));
+                i.transform.parent = p.transform;
+                i.transform.Translate(p.transform.position);
             }
         }
 
