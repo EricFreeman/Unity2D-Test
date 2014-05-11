@@ -11,7 +11,8 @@ namespace Assets.Scripts
             if (player != null)
             {
                 var health = player.GetComponent<Health>();
-                guiTexture.pixelInset = new Rect(0, 0, health.CurrentHealth/health.MaxHealth*128, 8);
+                var s = GetComponent<UISlider>();
+                s.sliderValue = health.CurrentHealth/health.MaxHealth;
             }
         }
     }
