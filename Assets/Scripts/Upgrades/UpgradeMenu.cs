@@ -18,7 +18,7 @@ public class UpgradeMenu : MonoBehaviour
         set
         {
             _money = value;
-            GameObject.Find("MoneyLabel").GetComponent<UILabel>().text = value.ToString("c");
+            GameObject.Find("CredsLabel").GetComponent<UILabel>().text = value.ToString("c");
             _currentPlayer.Money = value;
         }
     }
