@@ -19,12 +19,12 @@ namespace Assets.Scripts
             if (currentDelay < 0)
             {
                 var b = (GameObject) Instantiate(Resources.Load("Prefabs/bullet"));
-                b.transform.position = transform.GetChild(0).position;
+                b.transform.position = transform.position;
                 var bc = b.GetComponent<Bullet>();
                 bc.Damage = Damage;
                 bc.Direction = -1*transform.rotation.z;
                 bc.Speed = 10f;
-                bc.Source = transform.parent.transform;
+                bc.Source = transform.parent.parent.transform;
 
                 currentDelay = MaxDelay;
             }
