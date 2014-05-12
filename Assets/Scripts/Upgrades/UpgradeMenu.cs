@@ -51,8 +51,8 @@ public class UpgradeMenu : MonoBehaviour
 //        _storeItems.Add(new Item("Armor 1", "Starter armor", 5, ItemCategory.ShipUpgrade));
 //        _storeItems.Add(new Item("Armor 2", "Okay armor", 25, ItemCategory.ShipUpgrade));
 //        _storeItems.Add(new Item("Armor 3", "Best armor", 250, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 25000, ItemCategory.ShipUpgrade));
         _storeItems.Add(new Item("Battering Ram", "Who needs weapons when you can just ram the other ships?", 2500, ItemCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 25000, ItemCategory.ShipUpgrade));
 
 //        var manager = new XmlManager<PlayerModel>();
 //
