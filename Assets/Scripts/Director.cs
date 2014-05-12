@@ -62,7 +62,7 @@ namespace Assets.Scripts
                     ecom.X = float.Parse(enemy.GetAttributeOrDefault("X", "0"));
                     ecom.Spawn = float.Parse(enemy.GetAttributeOrDefault("Spawn", "0"));
                     ecom.Speed = float.Parse(enemy.GetAttributeOrDefault("Speed", "5"));
-                    ecom.transform.Translate(0, 17, 0);
+                    ecom.transform.Translate(0, 20, 0);
                     e.gameObject.SetActive(false);
 
                     w.EnemiesToSpawn.Add(e);
