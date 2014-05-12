@@ -35,23 +35,24 @@ public class UpgradeMenu : MonoBehaviour
         _storeItems.Add(new Item("Machine Gun", "Better than a BB Gun, but you still won't be doing a lot of damage out there.", 25, ItemCategory.Weapon));
         _storeItems.Add(new Item("Laser Beams", "Pew pew pew!", 250, ItemCategory.Weapon));
         _storeItems.Add(new Item("Plasma Cannon", "PEW PEW PEW!!", 2500, ItemCategory.Weapon));
-        _storeItems.Add(new Item("BFG 9000", "PEEEEEEEEEEEEEEEEEEEEEEEEEW!!!", 25000, ItemCategory.Weapon));
+//        _storeItems.Add(new Item("BFG 9000", "PEEEEEEEEEEEEEEEEEEEEEEEEEW!!!", 25000, ItemCategory.Weapon));
 
-        _storeItems.Add(new Item("Ship1", "Starter Ship", 5, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship2", "Okay Ship", 25, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship3", "Best Ship", 250, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship4", "Best Ship+", 2500, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship5", "Best Ship++", 25000, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship6", "Best Ship+++", 250000, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship7", "Best Ship++++", 2500000, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship8", "Best Ship+++++", 25000000, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship9", "Best Ship++++++", 250000000, ItemCategory.Ship));
-        _storeItems.Add(new Item("Ship10", "Warren Buffet used this ship when he conquered Earth in 3057.", 2500000000, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship1", "Starter Ship", 5, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship2", "Okay Ship", 25, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship3", "Best Ship", 250, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship4", "Best Ship+", 2500, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship5", "Best Ship++", 25000, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship6", "Best Ship+++", 250000, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship7", "Best Ship++++", 2500000, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship8", "Best Ship+++++", 25000000, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship9", "Best Ship++++++", 250000000, ItemCategory.Ship));
+//        _storeItems.Add(new Item("Ship10", "Warren Buffet used this ship when he conquered Earth in 3057.", 2500000000, ItemCategory.Ship));
 
-        _storeItems.Add(new Item("Armor 1", "Starter armor", 5, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Armor 2", "Okay armor", 25, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Armor 3", "Best armor", 250, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 250000, ItemCategory.ShipUpgrade));
+//        _storeItems.Add(new Item("Armor 1", "Starter armor", 5, ItemCategory.ShipUpgrade));
+//        _storeItems.Add(new Item("Armor 2", "Okay armor", 25, ItemCategory.ShipUpgrade));
+//        _storeItems.Add(new Item("Armor 3", "Best armor", 250, ItemCategory.ShipUpgrade));
+//        _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 250000, ItemCategory.ShipUpgrade));
+        _storeItems.Add(new Item("Battering Ram", "Who needs weapons when you can just ram the other ships?", 2500, ItemCategory.ShipUpgrade));
 
 //        var manager = new XmlManager<PlayerModel>();
 //

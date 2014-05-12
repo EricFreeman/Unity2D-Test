@@ -366,7 +366,7 @@ MonoBehaviour:
   mPivot: 4
   mDepth: 7
   mFont: {fileID: 11400000, guid: ac44b8a25154a9d40a172ab5851e0986, type: 2}
-  mText: Main Menu
+  mText: Quit
   mMaxLineWidth: 0
   mMaxLineHeight: 0
   mEncoding: 1
@@ -905,6 +905,7 @@ GameObject:
   - 114: {fileID: 1292347658}
   - 114: {fileID: 1292347657}
   - 114: {fileID: 1292347656}
+  - 114: {fileID: 1292347661}
   m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
@@ -998,6 +999,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 150, y: 40, z: 0}
   m_Center: {x: 0, y: 0, z: -2}
+--- !u!114 &1292347661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292347654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beff48fb18b988e4c9f0291d82d5ff95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1340716258
 GameObject:
   m_ObjectHideFlags: 0

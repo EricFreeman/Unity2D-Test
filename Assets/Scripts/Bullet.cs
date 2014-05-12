@@ -30,7 +30,8 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.transform == Source)
+            if (collider.transform == Source
+                || (collider.transform.parent != null && collider.transform.parent.transform == Source)) // will check for shields or battering rams since their parent would be the source
                 return;
 
             var h = collider.GetComponent<Health>();
