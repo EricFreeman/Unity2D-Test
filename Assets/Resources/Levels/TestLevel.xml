@@ -49,6 +49,6 @@
 		<Enemy Type="Popcorn" Spawn="3.5" X="1" Speed="8" />
 	</Wave>
 	<Wave BeforeWaveDelay='3'>
-		<Enemy Type='Boss1' Spawn='0' X='0' Speed='5' Money='2500' />
+		<Enemy Type='Boss1' Spawn='0' X='0' Speed='2' Money='2500' />
 	</Wave>
 </Waves>

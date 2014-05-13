@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         public float Money;
 
+        public bool IsAutoFire = true;
+
         // Use this for initialization
         void Start()
         {
@@ -33,8 +35,8 @@ namespace Assets.Scripts
             if (transform.position.y < MinY) transform.Translate(0, MinY - transform.position.y, 0);
             if (transform.position.y > MaxY) transform.Translate(0, MaxY - transform.position.y, 0);
 
-            // Fire all weapons attached to the player
-            if (Input.GetKey(KeyCode.Space))
+            // Fire all weapons attached to the player (uncomment this to turn off autofire)
+            if (Input.GetKey(KeyCode.Space) || IsAutoFire)
                 foreach (var w in GetComponentsInChildren<Weapon>())
                     w.Fire();
         }

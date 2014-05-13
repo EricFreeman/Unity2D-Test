@@ -157,7 +157,13 @@ namespace Assets.Scripts
                         if (newWave != null)
                             _waveDelay = newWave.BeforeWaveDelay;
                         else
+                        {
                             _isLevelOver = true;
+                            foreach (var bullet in FindObjectsOfType<Bullet>())
+                                bullet.Destroy();
+                            foreach (var weapon in FindObjectsOfType<Weapon>())
+                                weapon.IsDisabled = true;
+                        }
                     }
                 }
             }

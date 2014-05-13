@@ -21,11 +21,16 @@ namespace Assets.Scripts
                 return;
             }
 
-            transform.Translate((float)Math.Sin(Direction) * Speed * Time.deltaTime,
-                (float)Math.Cos(Direction) * Speed * Time.deltaTime, 0);
+            transform.Translate((float)Math.Cos(Direction * Math.PI/180) * Speed * Time.deltaTime,
+                (float)Math.Sin(Direction * Math.PI/180) * Speed * Time.deltaTime, 0);
 
             if (!renderer.isVisible)
                 DestroyImmediate(gameObject);
+        }
+
+        public void Destroy()
+        {
+            _toDestroyFlag = true;
         }
 
         private void OnTriggerEnter2D(Collider2D collider)
