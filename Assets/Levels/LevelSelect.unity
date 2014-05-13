@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c77604672d87bd4fa92e7273aafe623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: Level1
+  LevelName: TestLevel
 --- !u!114 &69364889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +748,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 52e18c32b26b77843839c679666ae84a, type: 2}
       propertyPath: LevelName
-      value: Level1
+      value: TestLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52e18c32b26b77843839c679666ae84a, type: 2}
@@ -1075,9 +1075,9 @@ Transform:
   m_LocalPosition: {x: -.99965179, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 199817112}
   - {fileID: 69364886}
   - {fileID: 785593970}
-  - {fileID: 199817112}
   m_Father: {fileID: 1108598992}
 --- !u!1 &1108598990
 GameObject:

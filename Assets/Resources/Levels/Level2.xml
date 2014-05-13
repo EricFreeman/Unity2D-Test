@@ -1,7 +1,38 @@
 <Waves>
 	<Wave BeforeWaveDelay='0'>
 		<Enemy Type='Fighter II' Spawn='0' X='0' Speed='5' Money='25' />
+		<Enemy Type='Popcorn' Spawn='0' X='0' Speed='3' Money='5' />
 		<Enemy Type='Fighter' Spawn='0.5' X='2' Speed='5' Money='15' />
 		<Enemy Type='Fighter' Spawn='0.5' X='-2' Speed='5' Money='15' />
+		<Enemy Type='Popcorn' Spawn='0.5' X='-1' Speed='3' Money='5' />
+		<Enemy Type='Fighter II' Spawn='1' X='0' Speed='5' Money='25' />
+		<Enemy Type='Popcorn' Spawn='1' X='2' Speed='4' Money='5' />
+		<Enemy Type='Fighter' Spawn='1.5' X='2' Speed='5' Money='15' />
+		<Enemy Type='Fighter' Spawn='1.5' X='-2' Speed='5' Money='15' />
+		<Enemy Type='Popcorn' Spawn='1.5' X='-2' Speed='3' Money='5' />
+		<Enemy Type='Fighter II' Spawn='2' X='0' Speed='5' Money='25' />
+		<Enemy Type='Popcorn' Spawn='2' X='0' Speed='2' Money='5' />
+		<Enemy Type='Popcorn' Spawn='2' X='3' Speed='4' Money='5' />
+		<Enemy Type='Popcorn' Spawn='2.5' X='0' Speed='2' Money='5' />
+		<Enemy Type='Fighter II' Spawn='3' X='0' Speed='5' Money='25' />
+		<Enemy Type='Popcorn' Spawn='3' X='0' Speed='3' Money='5' />
+		<Enemy Type='Popcorn' Spawn='3' X='-3' Speed='5' Money='5' />
+		<Enemy Type='Popcorn' Spawn='3.5' X='0' Speed='3' Money='5' />
+		<Enemy Type='Fighter II' Spawn='4' X='0' Speed='5' Money='25' />
+		<Enemy Type='Popcorn' Spawn='4' X='0' Speed='3' Money='5' />
+		<Enemy Type='Fighter II' Spawn='4.5' X='-2' Speed='3' Money='25' />
+		<Enemy Type='Fighter II' Spawn='4.5' X='2' Speed='3' Money='25' />
+		<Enemy Type='Popcorn' Spawn='4.5' X='0' Speed='3' Money='5' />
+		<Enemy Type='Popcorn' Spawn='5' X='2' Speed='3' Money='5' />
+		<Enemy Type='Popcorn' Spawn='5' X='-2' Speed='4' Money='5' />
+		<Enemy Type='Popcorn' Spawn='5' X='0' Speed='3' Money='5' />
+		<Enemy Type='Fighter II' Spawn='6' X='0' Speed='5' Money='25' />
+		<Enemy Type='Fighter II' Spawn='8' X='-1' Speed='4' Money='25' />
+		<Enemy Type='Popcorn' Spawn='6' X='1' Speed='3' Money='5' />
+		<Enemy Type='Popcorn' Spawn='6' X='-1' Speed='5' Money='5' />
+		<Enemy Type='Popcorn' Spawn='7' X='0' Speed='3' Money='5' />
+		<Enemy Type='Fighter II' Spawn='7.5' X='1' Speed='5' Money='25' />
+		<Enemy Type='Popcorn' Spawn='8' X='-3' Speed='3' Money='5' />
+		<Enemy Type='Popcorn' Spawn='8' X='3' Speed='3' Money='5' />
 	</Wave>
 </Waves>
