@@ -1,0 +1,7 @@
+<Waves>
+	<Wave BeforeWaveDelay='0'>
+		<Enemy Type='Fighter II' Spawn='0' X='0' Speed='5' Money='25' />
+		<Enemy Type='Fighter' Spawn='0.5' X='2' Speed='5' Money='15' />
+		<Enemy Type='Fighter' Spawn='0.5' X='-2' Speed='5' Money='15' />
+	</Wave>
+</Waves>
