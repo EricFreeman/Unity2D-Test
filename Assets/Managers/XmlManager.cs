@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-using Assets.Extensions;
-using UnityEngine;
 
 namespace Assets.Services
 {
@@ -18,7 +16,7 @@ namespace Assets.Services
         public T Load(string path)
         {
             T instance;
-            using (TextReader reader = new StreamReader("{0}/{1}".ToFormat(Application.persistentDataPath, path)))
+            using (TextReader reader = new StreamReader(path))
             {
                 var xml = new XmlSerializer(Type);
                 instance = (T)xml.Deserialize(reader);
@@ -28,7 +26,7 @@ namespace Assets.Services
 
         public void Save(string path, object obj)
         {
-            using (TextWriter writer = new StreamWriter("{0}/{1}".ToFormat(Application.persistentDataPath, path)))
+            using (TextWriter writer = new StreamWriter(path))
             {
                 var xml = new XmlSerializer(Type);
                 xml.Serialize(writer, obj);

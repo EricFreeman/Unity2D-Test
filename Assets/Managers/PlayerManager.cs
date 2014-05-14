@@ -8,7 +8,8 @@ namespace Assets.Managers
 {
     public static class PlayerManager
     {
-        public static string SaveGameFile = "savegame1.xml";
+        public static string SaveGameFile = 
+            "{0}/savegame1.xml".ToFormat(Application.persistentDataPath);
 
         public static void Save(PlayerModel player)
         {
@@ -19,7 +20,7 @@ namespace Assets.Managers
         public static PlayerModel Load()
         {
             var manager = new XmlManager<PlayerModel>();
-            if (!File.Exists("{0}/{1}".ToFormat(Application.persistentDataPath, SaveGameFile))) Reset();
+            if (!File.Exists(SaveGameFile)) Reset();
             return manager.Load(SaveGameFile);
         }
 

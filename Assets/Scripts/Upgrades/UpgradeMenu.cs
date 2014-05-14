@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using Assets.Managers;
 using Assets.Models;
 using Assets.Scripts.Upgrades;
+using Assets.Services;
 using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
@@ -29,17 +31,8 @@ public class UpgradeMenu : MonoBehaviour
 
     void Start()
     {
-        #region TODO: Load this stuff from files
-
-        _storeItems.Add(new Item("BB Gun", "Unless you're hunting tin cans in space, this weapon is pretty useless.", 100, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Machine Gun", "Better than a BB Gun, but you still won't be doing a lot of damage out there.", 1500, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Laser Beams", "Pew pew pew!", 10000, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Plasma Cannon", "PEW PEW PEW!!", 150000, ItemCategory.Weapon));
-
-        _storeItems.Add(new Item("Battering Ram", "Who needs weapons when you can just ram the other ships?", 2500, ItemCategory.ShipUpgrade));
-        _storeItems.Add(new Item("Repair Robots", "Floating micro robots that will slowly repair the structural integrity of your ship's hull.", 25000, ItemCategory.ShipUpgrade));
-
-        #endregion
+        var manager = new XmlManager<List<Item>>();
+        _storeItems = manager.Load("Assets/Resources/Store/StoreItems.xml");
 
         ChangeStoreCategory(ItemCategory.Weapon);
 

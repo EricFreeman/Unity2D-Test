@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item>
+    <Name>BB Gun</Name>
+    <Description>Unless you're hunting tin cans in space, this weapon is pretty useless.</Description>
+    <Price>100</Price>
+    <Category>Weapon</Category>
+  </Item>
+  <Item>
+    <Name>Machine Gun</Name>
+    <Description>Better than a BB Gun, but you still won't be doing a lot of damage out there.</Description>
+    <Price>1500</Price>
+    <Category>Weapon</Category>
+  </Item>
+  <Item>
+    <Name>Laser Beams</Name>
+    <Description>Pew pew pew!</Description>
+    <Price>10000</Price>
+    <Category>Weapon</Category>
+  </Item>
+  <Item>
+    <Name>Plasma Cannon</Name>
+    <Description>PEW PEW PEW!!</Description>
+    <Price>150000</Price>
+    <Category>Weapon</Category>
+  </Item>
+  <Item>
+    <Name>Battering Ram</Name>
+    <Description>Who needs weapons when you can just ram the other ships?</Description>
+    <Price>2500</Price>
+    <Category>ShipUpgrade</Category>
+  </Item>
+  <Item>
+    <Name>Repair Robots</Name>
+    <Description>Floating micro robots that will slowly repair the structural integrity of your ship's hull.</Description>
+    <Price>25000</Price>
+    <Category>ShipUpgrade</Category>
+  </Item>
+</ArrayOfItem>
