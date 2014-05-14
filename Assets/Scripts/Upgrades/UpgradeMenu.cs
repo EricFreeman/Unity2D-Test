@@ -31,10 +31,10 @@ public class UpgradeMenu : MonoBehaviour
     {
         #region TODO: Load this stuff from files
 
-        _storeItems.Add(new Item("BB Gun", "Unless you're hunting tin cans in space, this weapon is pretty useless.", 5, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Machine Gun", "Better than a BB Gun, but you still won't be doing a lot of damage out there.", 25, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Laser Beams", "Pew pew pew!", 250, ItemCategory.Weapon));
-        _storeItems.Add(new Item("Plasma Cannon", "PEW PEW PEW!!", 2500, ItemCategory.Weapon));
+        _storeItems.Add(new Item("BB Gun", "Unless you're hunting tin cans in space, this weapon is pretty useless.", 100, ItemCategory.Weapon));
+        _storeItems.Add(new Item("Machine Gun", "Better than a BB Gun, but you still won't be doing a lot of damage out there.", 1500, ItemCategory.Weapon));
+        _storeItems.Add(new Item("Laser Beams", "Pew pew pew!", 10000, ItemCategory.Weapon));
+        _storeItems.Add(new Item("Plasma Cannon", "PEW PEW PEW!!", 150000, ItemCategory.Weapon));
 //        _storeItems.Add(new Item("BFG 9000", "PEEEEEEEEEEEEEEEEEEEEEEEEEW!!!", 25000, ItemCategory.Weapon));
 
 //        _storeItems.Add(new Item("Ship1", "Starter Ship", 5, ItemCategory.Ship));

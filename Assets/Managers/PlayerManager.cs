@@ -1,5 +1,8 @@
-﻿using Assets.Models;
+﻿using System.IO;
+using Assets.Extensions;
+using Assets.Models;
 using Assets.Services;
+using UnityEngine;
 
 namespace Assets.Managers
 {
@@ -16,7 +19,14 @@ namespace Assets.Managers
         public static PlayerModel Load()
         {
             var manager = new XmlManager<PlayerModel>();
+            if (!File.Exists("{0}/{1}".ToFormat(Application.persistentDataPath, SaveGameFile))) Reset();
             return manager.Load(SaveGameFile);
+        }
+
+        public static void Reset()
+        {
+            var player = new PlayerModel {Money = 100};
+            Save(player);
         }
     }
 }
