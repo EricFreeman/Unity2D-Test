@@ -27,12 +27,15 @@
 		<Enemy Type='Popcorn' Spawn='5' X='-2' Speed='4' Money='5' />
 		<Enemy Type='Popcorn' Spawn='5' X='0' Speed='3' Money='5' />
 		<Enemy Type='Fighter II' Spawn='6' X='0' Speed='5' Money='25' />
-		<Enemy Type='Fighter II' Spawn='8' X='-1' Speed='4' Money='25' />
 		<Enemy Type='Popcorn' Spawn='6' X='1' Speed='3' Money='5' />
 		<Enemy Type='Popcorn' Spawn='6' X='-1' Speed='5' Money='5' />
 		<Enemy Type='Popcorn' Spawn='7' X='0' Speed='3' Money='5' />
 		<Enemy Type='Fighter II' Spawn='7.5' X='1' Speed='5' Money='25' />
+		<Enemy Type='Fighter II' Spawn='8' X='-1' Speed='4' Money='25' />
 		<Enemy Type='Popcorn' Spawn='8' X='-3' Speed='3' Money='5' />
 		<Enemy Type='Popcorn' Spawn='8' X='3' Speed='3' Money='5' />
+	</Wave>
+	<Wave BeforeWaveDelay='0'>
+		<Enemy Type='Boss2' Spawn='0' X='0' Speed='3' Money='0' />
 	</Wave>
 </Waves>

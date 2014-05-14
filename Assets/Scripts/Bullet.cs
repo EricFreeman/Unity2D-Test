@@ -40,6 +40,14 @@ namespace Assets.Scripts
                 || (Source != null && collider.tag == Source.tag)) // will make sure enemies can't shoot eachother!
                 return;
 
+            // Make sure the section of a boss isn't invincible right now
+            var inv = collider.GetComponent<Invincibility>();
+            if (inv != null && inv.IsInvincible) 
+            {
+                _toDestroyFlag = true;
+                return;
+            }
+
             var h = collider.GetComponent<Health>();
             if (h != null) h.CurrentHealth -= Damage;
             _toDestroyFlag = true;
