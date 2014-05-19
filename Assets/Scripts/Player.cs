@@ -4,8 +4,7 @@ namespace Assets.Scripts
 {
     public class Player : MonoBehaviour
     {
-        public float MaxSpeed = 5f;
-        private float _currentSpeed;
+        public float MaxSpeed = 5;
 
         public float MinX = -8;
         public float MinY = 0;
@@ -16,12 +15,6 @@ namespace Assets.Scripts
 
         public bool IsAutoFire = true;
 
-        // Use this for initialization
-        void Start()
-        {
-            _currentSpeed = MaxSpeed;
-        }
-
         // Update is called once per frame
         void Update()
         {
@@ -29,7 +22,7 @@ namespace Assets.Scripts
             var xSpd = Input.GetAxisRaw("Horizontal");
             var ySpd = Input.GetAxisRaw("Vertical");
 
-            transform.Translate(new Vector3(xSpd, ySpd, 0) * _currentSpeed * Time.deltaTime);
+            transform.Translate(new Vector3(xSpd, ySpd, 0) * MaxSpeed * Time.deltaTime);
             if (transform.position.x < MinX) transform.Translate(MinX - transform.position.x, 0, 0);
             if (transform.position.x > MaxX) transform.Translate(MaxX - transform.position.x, 0, 0);
             if (transform.position.y < MinY) transform.Translate(0, MinY - transform.position.y, 0);

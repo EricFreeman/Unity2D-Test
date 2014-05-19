@@ -38,7 +38,13 @@
   </Item>
   <Item>
 	<Name>Armor I</Name>
-	<Description>Test</Description>
+	<Description>Take more of a beating with this upgraded hull armor.</Description>
+	<Price>100</Price>
+	<Category>ShipUpgrade</Category>
+  </Item>
+  <Item>
+	<Name>Thrusters I</Name>
+	<Description>Dodge bullets, lasers, and missiles with the increased agility your ship gains from these thrusters.</Description>
 	<Price>100</Price>
 	<Category>ShipUpgrade</Category>
   </Item>
