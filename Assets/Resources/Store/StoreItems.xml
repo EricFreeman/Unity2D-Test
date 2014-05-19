@@ -36,4 +36,10 @@
     <Price>25000</Price>
     <Category>ShipUpgrade</Category>
   </Item>
+  <Item>
+	<Name>Armor I</Name>
+	<Description>Test</Description>
+	<Price>100</Price>
+	<Category>ShipUpgrade</Category>
+  </Item>
 </ArrayOfItem>
